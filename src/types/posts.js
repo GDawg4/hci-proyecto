@@ -1,0 +1,4 @@
+export const POST_LIKED = 'POST_LIKED';
+export const POST_REPORTED = 'POST_REPORTED';
+export const POST_PUBLISHED = 'POST_PUBLISHED';
+export const POST_SHARED = 'POST_SHARED';

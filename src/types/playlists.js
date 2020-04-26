@@ -1,0 +1,4 @@
+export const PLAYLIST_LIKED = 'PLAYLIST_LIKED';
+export const PLAYLIST_SHARED = 'PLAYLIST_SHARED';
+export const ADDED_SONG = 'SONG_ADDED';
+export const REMOVED_SONG = 'SONG_REMOVED';
