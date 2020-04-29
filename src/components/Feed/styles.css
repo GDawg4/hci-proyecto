@@ -1,0 +1,16 @@
+.feed-container {
+    margin-left: 420px;
+    width: 1250px;
+    color: black;
+    text-align: center;
+}
+
+.default-message {
+    color: #19223F;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 5rem;
+    left: 30%;
+    position: absolute;
+    top: 50%;
+    transform: translate(50%, -50%);
+}
