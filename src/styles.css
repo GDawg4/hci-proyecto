@@ -101,12 +101,14 @@
 }
 
 .searchBar{
+    background-image: url("https://clipartart.com/images/free-search-icon-clipart-3.jpg");
+    background-position: 0.08rem 0.08rem;
+    background-repeat: no-repeat;
+    background-size: contain;
     background-color: #E6E8E6;
     border-style: none;
 }
 
-.searchButton{
-}
 
 .searchLabel{
     background-color: #E6E8E6;
@@ -114,11 +116,14 @@
 
 }
 
+
 .textboxes{
     display: flex;
     flex-direction: column;
     font-family: "Roboto Thin", sans-serif;
     margin-top: 2rem;
+    margin-left: 1rem;
+    width: fit-content;
 }
 
 .container2 {
@@ -191,6 +196,7 @@
 .dropdown {
     position: relative;
     display: inline-block;
+    margin-left: 1rem;
 }
 
 /* Dropdown Content (Hidden by Default) */
@@ -222,4 +228,142 @@
 /* Change the background color of the dropdown button when the dropdown content is shown */
 .dropdown:hover .dropbtn {
     background-color: #F59320;
+}
+
+/* The alert message box */
+.alert {
+    padding: 20px;
+    background-color: #19223F; /* Red */
+    color: white;
+    margin-top: 2rem;
+    margin-bottom: 15px;
+}
+
+/* The close button */
+.closebtn {
+    margin-left: 15px;
+    color: white;
+    font-weight: bold;
+    float: right;
+    font-size: 22px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+/* When moving the mouse over the close button */
+.closebtn:hover {
+    color: black;
+}
+
+.logo{
+    background-image: url("resources/logoOrange.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 5rem;
+    margin-top: 4rem;
+}
+
+.testfont{
+    font-family: "Roboto Thin", sans-serif;
+    font-weight: normal;
+    font-weight: bold;
+    letter-spacing: 1px;
+    font-size: x-large;
+    margin-top: 2rem;
+    margin-left: 2rem;
+    padding-left: 1rem;
+}
+
+.first{
+    margin-top: 10rem;
+}
+
+.image{
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: left;
+}
+.inicio{
+    background-image: url("resources/inicioWhite.png");
+}
+
+.album{
+    background-image: url("resources/wideAwake.jpg");
+    background-origin: content-box;
+    background-position: top;
+    height: 18rem;
+}
+
+.image-info{
+    background-color: white;
+    height: 6rem;
+    font-family: "Roboto Thin", sans-serif;
+}
+
+
+.vertical-div{
+    background-repeat: no-repeat;
+    background-size: contain;
+    border-color: #E6E8E6;
+    border-radius: 2rem;
+    border-style: solid;
+    border-width: thin;
+    display: flex;
+    flex-direction: column;
+    font-family: "Roboto Thin", sans-serif;
+    height: 24rem;
+    margin-left: 1rem;
+    overflow: hidden;
+    width: 18rem;
+
+}
+
+.album-header{
+    color: #19223F;
+    padding-top: 2rem;
+    padding-left: 1rem;
+    font-size: medium;
+    font-weight: bold;
+}
+
+.album-info{
+    color: #19223F;
+    font-size: small;
+    padding-left: 1rem;
+    padding-top: 0.5rem;
+}
+
+.more-actions{
+    color: #F59320;
+    width: 1rem;
+    height: 1rem;
+    margin-left: 8rem;
+    margin-top: 2rem;
+    background-image: url("resources/Proyecto - Opciones.png");
+}
+
+.image-footer{
+    display: flex;
+    flex-direction: row;
+}
+
+.top{
+    background-image: url("resources/topWhite.png");
+}
+
+.messages{
+    background-image: url("resources/messagesWhite.png");
+}
+.library{
+    background-image: url("resources/libraryWhite.png");
+}
+.options{
+    background-image: url("resources/optionsWhite.png");
+}
+
+.end{
+    margin-top: 10rem;
+    height: 10rem;
 }
