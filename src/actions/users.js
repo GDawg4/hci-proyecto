@@ -19,3 +19,10 @@ export const deleteUser = id => ({
         id
     }
 });
+
+export const selectUser = id => ({
+    type: types.USER_SELECTED,
+    payload: {
+        id
+    }
+});

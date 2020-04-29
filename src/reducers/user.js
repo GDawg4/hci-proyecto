@@ -33,13 +33,25 @@ const userByOrder = (state = [], action) => {
         }
     }
 }
+const selectedUser = (state = null, action) =>{
+    switch (action.type) {
+        case types.USER_CREATED:{
+            return action.payload.id
+        }
+        default:{
+            return state
+        }
+    }
+}
 
 const users = combineReducers({
+    selectedUser,
     userById,
     userByOrder,
 })
 
 export default users;
 
+export const getSelectedUser = (state) => state.selectedUser;
 export const getUserById = (state, id) => state.userById[id];
 export const getUsers = state => state.userByOrder.map(id => getUserById(state, id));
