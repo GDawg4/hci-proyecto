@@ -18,7 +18,8 @@ const postById = (state = {}, action) => {
                 ...state,
                 [action.payload.id]:{
                     ...state[action.payload.id],
-                    likes:state[action.payload.id].likes+1
+                    likes:state[action.payload.id].likes+1,
+                    userLikes: [...state[action.payload.id].userLikes, action.payload.id]
                 }
             }
         }
@@ -58,5 +59,8 @@ const postReducer = combineReducers({
     postById,
     postOrder,
 })
+
+export const getPostById = (state, id) => state.postReducer.postById[id];
+export const getAllPosts = (state) => state.postReducer.postOrder.map( id => getPostById(state, id));
 
 export default postReducer;

@@ -52,6 +52,6 @@ const users = combineReducers({
 
 export default users;
 
-export const getSelectedUser = (state) => state.selectedUser;
-export const getUserById = (state, id) => state.userById[id];
-export const getUsers = state => state.userByOrder.map(id => getUserById(state, id));
+export const getSelectedUser = (state) => state.users.selectedUser;
+export const getUserById = (state, id) => state.users.userById[id];
+export const getUsers = state => state.users.userByOrder.map(id => getUserById(state, id));

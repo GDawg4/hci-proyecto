@@ -4,8 +4,6 @@ import './styles.css';
 import * as selectors from '../../reducers';
 import Post from '../Post';
 import NavBar from '../NavBar';
-import default_image from "../../resources/default.svg";
-import * as postActions from '../../actions/posts'
 import NewPost from "../NewPost";
 import reverse from 'lodash/reverse'
 
@@ -14,11 +12,11 @@ const height = content => {
     return result;
 }
 
-const Feed = ({ posts, selectedUser}) => (
+const Feed = ({ posts, selectedUser, text}) => (
     <div>
         <NavBar />
         <div className="feed-container">
-            <NewPost selectedUser = {selectedUser}/>
+            <NewPost selectedUser = {selectedUser} text = {text}/>
             {posts.length > 0 ? reverse(posts).map(post =>
                 <Post key={post.id} index={post.id} height={height(post.content)} {...post}/>
             ) : <div className="default-message">NO HAY POSTS</div>}
@@ -30,7 +28,8 @@ export default connect(
     (state, {index}) => (
         {
         posts: selectors.getAllPosts(state),
-        selectedUser: selectors.getUserById(state, selectors.getSelectedUser(state))
+        selectedUser: selectors.getUserById(state, selectors.getSelectedUser(state)),
+        text:selectors.getNewPostText(state)
     }),
     undefined,
 )(Feed);

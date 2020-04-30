@@ -3,10 +3,13 @@ import postReducer from "./posts";
 import users from './user';
 
 import * as selectors from './user';
+import * as postSelectors from './posts'
 import * as postTypes from '../types/posts';
 import * as navigationTypes from '../types/navigation';
 import * as authTypes from '../types/auth';
 import omit from 'lodash/omit';
+import isNil from 'lodash/isNil'
+
 
 // Se combinan los reductores de evento y bebe
 
@@ -46,10 +49,10 @@ const reducer = combineReducers({
 
 export default reducer;
 
-export const getSelectedSection = (state) => state.navigationReducer;
-export const getPost = (state, id) => state.postReducer.postById[id];
-export const getAllPosts = (state) => state.postReducer.postOrder.map( id => getPost(state, id));
-export const getUserById = (state, id) => selectors.getUserById(state.users, id);
-export const getSelectedUser = (state) => selectors.getSelectedUser(state.users);
-export const getUsers = state => selectors.getUsers(state.users);
-export const getAuth = state => state.auth;
+export const getSelectedSection = (state) => state.reducer.navigationReducer;
+export const getAllPosts = (state) => postSelectors.getAllPosts(state.reducer);
+export const getUserById = (state, id) => selectors.getUserById(state.reducer, id);
+export const getSelectedUser = (state) => selectors.getSelectedUser(state.reducer);
+export const getUsers = state => selectors.getUsers(state.reducer);
+export const getAuth = state => state.reducer.auth;
+export const getNewPostText = state => state.form;

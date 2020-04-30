@@ -22,7 +22,8 @@ export const publishPost = (user, username, likes, content) =>(
         user, 
         username,
         likes, 
-        content 
+        content,
+        userLikes:[]
     }
 });
 
@@ -30,3 +31,4 @@ export const deletePost = (id) => ({
     type: types.POST_DELETED,
     payload: { id }
 });
+
