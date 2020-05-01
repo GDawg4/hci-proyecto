@@ -1,14 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {applyMiddleware, createStore, combineReducers} from 'redux';
-import {composeWithDevTools} from "redux-devtools-extension";
-import {reducer as formReducer} from 'redux-form'
+import { applyMiddleware, createStore, combineReducers } from 'redux';
+import { composeWithDevTools } from "redux-devtools-extension";
+import { reducer as formReducer } from 'redux-form';
 
-import * as selectors from './reducers'
-import reducer from './reducers'
+import App from './app';
+import reducer from './reducers';
+import * as selectors from './reducers';
 import * as postActions from './actions/posts';
-import * as userActions from './actions/users'
-import App from './app'
+import * as userActions from './actions/users';
+
 
 const rootReducer = combineReducers({reducer, form:formReducer});
 
@@ -19,7 +20,7 @@ store.dispatch(postActions.publishPost("Christian Molina", "chrismolina", 38, "M
 store.dispatch(postActions.publishPost("María Ximena", "xime222", 10, "La mejor canción del nuevo álbum de Bad Bunny. La mejor canción del nuevo álbum de Bad Bunny. La mejor canción del nuevo álbum de Bad Bunny. La mejor canción del nuevo álbum de Bad Bunny."))
 store.dispatch(postActions.publishPost("Juan Donis", "juandonissss", 22, "Colores!"))
 store.dispatch(postActions.publishPost("Pedro Martínez", "martinezpedro", 22, "Colores!"))
-store.dispatch(userActions.createUser("Jose López", "josesito12", "joselop@gmail.com", "password123"))
+store.dispatch(userActions.createUser("Jose", "López", "josesito12", "joselop@gmail.com", "password123"))
 //console.log('Yay', selectors.getNewPostText(store.getState()))
 //console.log(selectors.getAllPosts(store.getState()));
 

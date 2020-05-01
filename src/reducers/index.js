@@ -39,16 +39,28 @@ const auth = (state = null, action) => {
     }
 }
 
+const loggedIn = (state = false, action) => {
+    switch (action.type) {
+        case authTypes.AUTH_COMPLETED: {
+            return true;
+        }
+        default: {
+            return state;
+        }
+    }
+}
 
 const reducer = combineReducers({
     postReducer,
     navigationReducer,
     users,
     auth,
+    loggedIn,
 })
 
 export default reducer;
 
+export const isLoggedIn = state => state.reducer.loggedIn;
 export const getSelectedSection = (state) => state.reducer.navigationReducer;
 export const getAllPosts = (state) => postSelectors.getAllPosts(state.reducer);
 export const getUserById = (state, id) => selectors.getUserById(state.reducer, id);
