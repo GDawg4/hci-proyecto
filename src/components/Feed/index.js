@@ -6,6 +6,8 @@ import Post from '../Post';
 import NavBar from '../NavBar';
 import NewPost from "../NewPost";
 import reverse from 'lodash/reverse'
+import MusicPlayer from "../MusicPlayer";
+
 
 const height = content => {
     const result = Math.ceil(content.length/64) * 27 + 148;
@@ -14,6 +16,7 @@ const height = content => {
 
 const Feed = ({ posts, selectedUser, text}) => (
     <div>
+        {/*<MusicPlayer/>*/}
         <NavBar />
         <div className="feed-container">
             <NewPost selectedUser = {selectedUser} text = {text}/>

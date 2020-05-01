@@ -3,6 +3,7 @@ import styled from 'styled-components';
 
 import Logo from '../Logo';
 import Links from '../Links';
+import MusicPlayer from "../MusicPlayer";
 
 const Container = styled.div.attrs({
     className: 'container',
@@ -32,6 +33,7 @@ const NavBar = () => (
         <Nav>
             <Logo />
             <Links />
+            {/*<MusicPlayer/>*/}
         </Nav>
     </Container>
 )

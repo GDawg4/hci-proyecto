@@ -1,0 +1,1 @@
+const SONG_CHANGED = 'SONG_STARTED';
