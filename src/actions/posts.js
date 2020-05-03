@@ -14,15 +14,16 @@ export const likePost = (id) => ({
     payload: { id }
 });
 
-export const publishPost = (user, username, likes, content) =>(
+export const publishPost = (user, username, likes, content, source) =>(
     {
     type: types.POST_PUBLISHED,
     payload: { 
         id: v4(),
         user, 
         username,
-        likes, 
+        likes,
         content,
+        source,
         userLikes:[]
     }
 });

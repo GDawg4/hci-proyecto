@@ -22,12 +22,14 @@ const NewPost = ({handleSubmit}) => {
         </form>)
 }
 
-const submit = (state, dispatch, {selectedUser, text}) => {
-    isNil(text.newPost.values) ? console.log('This is nothing ', text.newPost.values) : dispatch(postActions.publishPost(selectedUser.name, selectedUser.username, 0, text.newPost.values.newPostText))
+const submit = (state, dispatch, {selectedUser, text, songInfo}) => {
+    console.log('info', songInfo.cover)
+    isNil(text.values) ? console.log('This is nothing ', text.values) : dispatch(postActions.publishPost(selectedUser.name, selectedUser.username, 0, text.values.newPostText, songInfo.cover))
     dispatch(reset('newPost'))
 }
 
-const newPostForm = reduxForm({form:'newPost',
+const newPostForm = reduxForm(
+    {form:'newPost',
     onSubmit:submit})(NewPost);
 
 export default (newPostForm)

@@ -9,7 +9,7 @@ import picture1 from '../../resources/logoLetras.png'
 import {connect} from "react-redux";
 import * as actions from '../../actions/posts';
 
-const Post = ({ user, content, likes, username, height, like }) => (
+const Post = ({ user, content, likes, username, height, like, source }) => (
     <li>
         <div className="post-container">
             <div className="post-info-container">
@@ -32,7 +32,7 @@ const Post = ({ user, content, likes, username, height, like }) => (
                     <div className="likes">{likes}</div>
                 </div>
             </div>
-            <img src={picture1} className="song" height={height} alt="song"/>
+            <img src={source} className="song" height={height} alt="song"/>
         </div>
     </li>
 );

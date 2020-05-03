@@ -1,4 +1,18 @@
-.player{
+.music-player{
+    color: cyan;
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
+    width: 27rem;
     position: fixed;
-    z-index: 2;
+    margin-top: 0.5rem;
+    margin-left: 1rem;
+    top: 0;
+    right: 0;
+}
+
+.player-wrapper{
+    overflow: hidden;
+    border-radius: 1rem;
+    width: fit-content;
 }

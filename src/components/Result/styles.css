@@ -1,0 +1,19 @@
+.result-wrapper{
+    display: flex;
+    flex-direction: row;
+    background-color: #19223F;
+    color: #F59320;
+    border-radius: 1rem;
+    overflow: hidden;
+    margin-bottom: 1rem;
+}
+
+.result-info{
+    display: flex;
+    flex-direction: column;
+    margin-left: 8rem;
+    margin-right: 8rem;
+}
+.result-duration{
+    margin-top: 0.8rem;
+}
