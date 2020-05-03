@@ -14,26 +14,20 @@ const postById = (state = {}, action) => {
             return omit(state, action.payload.id);
         }
         case types.POST_LIKED:{
+            const bool = state[action.payload.id].userLikes.includes(action.payload.username)
+            const number = bool ? -1 : 1
             return {
                 ...state,
-                [action.payload.id]:{
+                [action.payload.id]: {
                     ...state[action.payload.id],
-                    likes:state[action.payload.id].likes+1,
-                    userLikes: [...state[action.payload.id].userLikes, action.payload.id]
+                    likes: state[action.payload.id].likes + number,
+                    userLikes: bool ? state[action.payload.id].userLikes.filter( username => username !== action.payload.username) : [...state[action.payload.id].userLikes, action.payload.username],
                 }
             }
         }
         default: {
             return state;
         }
-        // case types.POST_LIKED: {
-        //     return {
-        //         ...state,
-        //         [action.payload.id]: { 
-        //             likes: +1,
-        //         }
-        //     }
-        // }
     }
 };
 

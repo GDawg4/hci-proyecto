@@ -1,0 +1,73 @@
+.registro-button {
+    text-transform: uppercase;
+    background-color: white;
+    width: 486px;
+    margin-bottom: 16px;
+    height: 64px;
+    border-radius: 8px;
+    font-weight: 600;
+    outline: none;
+    border: none;
+}
+
+.registro-button .login-button-link {
+    text-decoration: none;
+    color: black;
+    font-weight: 600;
+    padding: 1rem 10rem;
+}
+
+.name {
+    margin-top: 32px;
+}
+
+.registry {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 30%;
+    left: 55%;
+}
+
+.registry span {
+    color: #d95d39;
+    font-size: 24px;
+    font-style: italic;
+    font-weight: 600;
+    padding-left: 8px;
+    overflow-x: scroll;
+}
+
+.success-message {
+    font-size: larger;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    top: 35%;
+    position: relative;
+}
+
+.success-message-header {
+    font-size: 50px;
+    align-self: center;
+    margin-top: 64px;
+}
+
+.success-message button {
+    align-self: center;
+    margin-top: 32px;
+    width: 50%;
+}
+
+.success-message img {
+    align-self: center;
+    margin-top: -128px;
+}
+
+.success-message button a {
+    text-decoration: none;
+    color: black;
+    font-weight: 600;
+    padding: 1rem 5rem;
+}

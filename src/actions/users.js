@@ -2,11 +2,12 @@ import { v4 } from 'node-uuid';
 
 import * as types from '../types/users';
 
-export const createUser = (name, username, email, password) =>({
+export const createUser = (name, lastName, username, email, password) =>({
     type: types.USER_CREATED,
     payload: { 
         id: v4(), 
         name,
+        lastName,
         username,
         email,
         password

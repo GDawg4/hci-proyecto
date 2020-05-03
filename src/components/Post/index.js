@@ -1,15 +1,19 @@
 import React from 'react';
+import {connect} from "react-redux";
 
 import './styles.css';
-import default_image from '../../resources/default.svg';
-import heart from '../../resources/heart.svg';
-//import song_default from '../../resources/song-default.svg';
-import picture from '../../resources/pic1.jpg';
-import picture1 from '../../resources/logoLetras.png'
-import {connect} from "react-redux";
+import * as selectors from '../../reducers';
 import * as actions from '../../actions/posts';
 
-const Post = ({ user, content, likes, username, height, like, source }) => (
+import default_image from '../../resources/default.svg';
+import heart from '../../resources/heart.svg';
+import heart_o from '../../resources/heartOrange.png';
+import picture1 from '../../resources/logoLetras.svg';
+// import { selectUser } from '../../actions/users';
+// import song_default from '../../resources/song-default.svg';
+// import picture from '../../resources/pic1.jpg';
+
+const Post = ({ user, content, likes, username, userLikes, userid, height, like, source }) => (
     <li>
         <div className="post-container">
             <div className="post-info-container">
@@ -28,7 +32,7 @@ const Post = ({ user, content, likes, username, height, like, source }) => (
                     </div>
                 </div>
                 <div className="likes-share">
-                    <img src={heart} className="heart" width="24" height="24" alt="like" onClick={like}/>
+                    <img src={userLikes.includes(userid) ? heart_o : heart} className="heart" width="24" height="24" alt="like" onClick={ () => like(userid)}/>
                     <div className="likes">{likes}</div>
                 </div>
             </div>
@@ -38,10 +42,12 @@ const Post = ({ user, content, likes, username, height, like, source }) => (
 );
 
 export default connect(
-    undefined,
-    (dispatch, {index})=>({
-        like(){
-            dispatch(actions.likePost(index))
-        }
+    state => ({
+        userid: selectors.getSelectedUser(state),
+    }),
+    (dispatch, { id }) => ({
+        like(userid){
+            dispatch(actions.likePost(userid, id))
+        },
     })
 )(Post)

@@ -1,12 +1,12 @@
 import default_image from "../../resources/default.svg";
 import React from "react";
 import * as postActions from '../../actions/posts'
-import {Field, reduxForm, reset} from 'redux-form'
+import { Field, reduxForm, reset } from 'redux-form'
 import isNil from 'lodash/isNil'
 
-const NewPost = ({handleSubmit}) => {
+const NewPost = ({ handleSubmit }) => {
     return (
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={ handleSubmit }>
             <div className='new-post'>
                 <img className= 'new-post-user' src={default_image}/>
                 <div className= 'post-input'>
@@ -28,6 +28,10 @@ const submit = (state, dispatch, {selectedUser, text, songInfo}) => {
     dispatch(reset('newPost'))
 }
 
+const newPostForm = reduxForm({
+    form: 'newPost',
+    onSubmit: submit
+})(NewPost);
 const newPostForm = reduxForm(
     {form:'newPost',
     onSubmit:submit})(NewPost);
