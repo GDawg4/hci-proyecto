@@ -12,13 +12,13 @@ const App = ({ store }) => (
   <Provider store={store}>
     <Router>
       <Switch>
-{/*        <Route path ="/" exact component={Login} />
-        <Route path ="/registro" exact component={Registro} />*/}
+        <Route path ="/" exact component={Login} />
+        <Route path ="/registro" exact component={Registro} />
         <Route path="/feed" exact component={Feed} />
-{/*        <Route path="/top" extact component={Top} />
+        <Route path="/top" extact component={Top} />
         <Route path="/biblioteca" extact component={Biblioteca} />
         <Route path="/chat" extact component={Chat} />
-        <Route path="/opciones" extact component={Opciones} />*/}
+        <Route path="/opciones" extact component={Opciones} />
       </Switch>
     </Router>
   </Provider>
