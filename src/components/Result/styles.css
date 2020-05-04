@@ -1,19 +1,47 @@
 .result-wrapper{
     display: flex;
     flex-direction: row;
-    background-color: #19223F;
-    color: #F59320;
-    border-radius: 1rem;
-    overflow: hidden;
-    margin-bottom: 1rem;
+    background-color: white;
+    color: #19223F;
+    margin-bottom: 0.2rem;
+    margin-right: 1rem;
+    border-radius: 8px;
+    height: 6rem;
+    padding: 0.5rem;
+    border: solid black 1px;
 }
 
 .result-info{
     display: flex;
+    text-align: left;
+    flex: 4;
     flex-direction: column;
-    margin-left: 8rem;
-    margin-right: 8rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
 }
-.result-duration{
-    margin-top: 0.8rem;
+
+.result-title {
+    padding-top: 1rem;
+    font-size: 28;
+    font-weight: 600;
+}
+
+.result-artist {
+    font-size: 24;
+    font-weight: 500;
+}
+
+.result-rest{
+    margin-top: 0.4rem;
+    float: right;
+    flex: 1;
+}
+
+.result-duration {
+    text-align: center;
+    width: 50px;
+}
+
+.play-btn:hover {
+    cursor: pointer;
 }

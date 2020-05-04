@@ -3,7 +3,7 @@ import Result from "../Result";
 import * as selectors from '../../reducers'
 import './styles.css'
 
-const SearchResults = ({songs}) => (
+const SearchResults = ({ songs }) => (
     <div className='results'>
         {
             songs.length == 0 ? <p>No hay resultados</p>:

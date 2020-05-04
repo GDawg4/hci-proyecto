@@ -16,7 +16,6 @@ const height = content => {
 
 const Feed = ({ posts, selectedUser, text, songInfo}) => (
     <div>
-        {/*<MusicPlayer/>*/}
         <NavBar />
         <div className="feed-container">
             <NewPost selectedUser = {selectedUser} text = {text} songInfo = {songInfo}/>

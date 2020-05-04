@@ -14,7 +14,7 @@ const Container = styled.div.attrs({
     position: relative;
     margin: 0px;
     padding: 0px;
-    width: 420px;
+    width: 320px;
 `
 
 const Nav = styled.nav.attrs({
@@ -24,7 +24,7 @@ const Nav = styled.nav.attrs({
     flex-direction: column;
     background: #19223F;
     position: fixed;
-    width: 420px;
+    width: 320px;
     height: 100%;
     padding: 0px;
     margin: 0px;
