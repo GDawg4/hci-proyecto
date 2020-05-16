@@ -10,7 +10,7 @@ const NewPost = ({ handleSubmit }) => {
     return (
         <form onSubmit={ handleSubmit }>
             <div className='new-post'>
-                <img className= 'new-post-user' src={default_image}/>
+                <img alt="default-user" className='new-post-user' src={default_image}/>
                 <div className= 'post-input'>
                     <Field name='newPostText' multiple={true} type='text' component='input' className='textarea' placeholder={'¿Qué estás pensando?'}/>
                     <div className='add-files'>

@@ -1,9 +1,36 @@
-.default-message {
+.top-screen-container {
+    margin-left: 320px;
+    width: 900px;
+    padding-left: 32px;
+    color: black;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.top-playlists-container, .recommended-playlists-container {
+    width: inherit;
+    display: flex;
+    flex-direction: row;
+    overflow-x: scroll;
+    scrollbar-color: #19223F #FFFFFF;
+    scrollbar-width: none;
+}
+
+.top-playlists-container:hover, .recommended-playlists-container:hover {
+    scrollbar-width: thin;
+}
+
+.recommended-playlists-container{
+    margin-bottom: 32px;
+}
+
+.recommended-playlists-container::-webkit-scrollbar-thumb {
+    height: 8px;
+}
+
+.top-screen-container h1 {
+    padding-top: 16px;
+    font-weight: 600;
     color: #19223F;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 5rem;
-    left: 30%;
-    position: absolute;
-    top: 50%;
-    transform: translate(50%, -50%);
 }

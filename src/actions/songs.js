@@ -1,16 +1,15 @@
 import * as types from '../types/songs'
-import {SONG_FOUND} from "../types/songs";
 
-export const findSong = (songID, title, artist, duration, cover) => ({
+export const findSong = (songID, title, artist, duration, cover, album) => ({
     type:types.SONG_FOUND,
-    payload:
-        {
-            songID,
-            title,
-            artist,
-            duration,
-            cover
-        }
+    payload: {
+        songID,
+        title,
+        artist,
+        duration,
+        cover,
+        album,
+    }
 })
 
 export const clearSong = () =>({

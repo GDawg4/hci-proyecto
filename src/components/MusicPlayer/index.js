@@ -8,12 +8,12 @@ import MusicForm from '../MusicForm';
 import './styles.css';
 import * as selectors from "../../reducers";
 
-const type = 'tracks';
-const id = '457602422';
-const searchTerm = 'Kendrick Lamar';
-const getInfoWithID = `https://api.deezer.com/${type}/${id}`;
-const getIDWithInfo = `https://api.deezer.com/search/${type}/?q=${searchTerm}&index=0&limit=1&output=json`;
-const url = `https://www.deezer.com/plugins/player?format=classic&autoplay=true&playlist=true&width=432&height=350&color=F59320&layout=dark&size=medium&type=${type}&id=${id}&app_id=1`;
+// const type = 'tracks';
+// const id = '457602422';
+// const searchTerm = 'Kendrick Lamar';
+// const getInfoWithID = `https://api.deezer.com/${type}/${id}`;
+// const getIDWithInfo = `https://api.deezer.com/search/${type}/?q=${searchTerm}&index=0&limit=1&output=json`;
+// const url = `https://www.deezer.com/plugins/player?format=classic&autoplay=true&playlist=true&width=432&height=350&color=F59320&layout=dark&size=medium&type=${type}&id=${id}&app_id=1`;
 /*const corsURLID = `https://cors-anywhere.herokuapp.com/${getInfoWithID}`;
 const corsURLInfo = `https://cors-anywhere.herokuapp.com/${getIDWithInfo}`;
 const axios = require('axios').default;*/
@@ -21,15 +21,14 @@ const axios = require('axios').default;*/
     console.log(response.data.data[0].id)
 });*/
 
-const MusicPlayer = ({ allForms, songs, currentlySelected }) =>
+const MusicPlayer = ({ allForms, songs, currentlySelected, isEmpty, isActive }) =>
     (
     <div className='music-player'>
         <MusicForm allForms = {allForms}/>
-        <SearchResults songs = {songs}/>
-        <div className='player-wrapper'>
-            <Iframe url= {`https://www.deezer.com/plugins/player?format=classic&autoplay=true&playlist=true&width=450&height=450&color=F59320&layout=dark&size=large&type=tracks&id=${currentlySelected}&app_id=1`} className='player'/>
+        <SearchResults songs={songs} isEmpty={isEmpty} isActive={isActive}/>
+        <div className="player-wrapper">
+            <Iframe className="responsive-iframe" scrolling="no" frameborder="0" allowTransparency="tru" src= {`https://www.deezer.com/plugins/player?format=square&autoplay=true&playlist=false&width=400&height=400&color=F59320&layout=&size=big&type=tracks&id=${currentlySelected}&app_id=1`} width="400" height="400"/>
         </div>
-        {/*{true ? <div className='no-music'>No hay...</div> : <div>Hay </div>}*/}
     </div>
 );
 
@@ -39,6 +38,8 @@ export default  connect(
         allForms: selectors.getFormsSearch(state),
         songs: selectors.getAllSongs(state),
         currentlySelected: selectors.getCurrentlySelected(state),
+        isEmpty: state.form.search.values === undefined,
+        isActive: state.form.search.active !== undefined,
     }),
     undefined
 )(MusicPlayer)

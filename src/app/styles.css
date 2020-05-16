@@ -1,0 +1,27 @@
+.back {
+    /*FONDO REFERENCIADO DE https://uigradients.com/#Sky */
+    background: #076585;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to bottom, #cae3eb, #076585);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to bottom, #cae3eb, #076585); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+    display: flex;
+    flex-direction: row;
+    height: 500px;
+    overflow-y: scroll;
+    position: fixed;
+    width: 100%;
+    scrollbar-width: none /*Esconde la barra de scroll en Firefox*/
+}
+
+.back::-webkit-scrollbar { 
+    display: none; /*Esconde la barra de scroll en Chrome y Safari*/
+}
+
+.wrapper__ {
+    display: flex;
+    flex-direction: column;
+}
+
+#root {
+    height: 100%;
+}

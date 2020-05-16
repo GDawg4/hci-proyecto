@@ -4,7 +4,6 @@ import { connect } from 'react-redux';
 import RegistroForm from '../RegistroForm';
 
 import './styles.css';
-import * as selectors from '../../reducers';
 import * as authActions from '../../actions/auth';
 import * as userActions from '../../actions/users';
 import background from '../../resources/registro-background.jpg';

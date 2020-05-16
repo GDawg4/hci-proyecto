@@ -6,7 +6,7 @@ import Post from '../Post';
 import NavBar from '../NavBar';
 import NewPost from "../NewPost";
 import reverse from 'lodash/reverse'
-import MusicPlayer from "../MusicPlayer";
+// import MusicPlayer from "../MusicPlayer";
 
 
 const height = content => {
@@ -23,7 +23,7 @@ const Feed = ({ posts, selectedUser, text, songInfo}) => (
                 <Post key={post.id} source={post.source} index={post.id} height={height(post.content)} {...post}/>
             ) : <div className="default-message">NO HAY POSTS</div>}
         </div>
-        <MusicPlayer/>
+        {/* <MusicPlayer/> */}
     </div>
 )
 

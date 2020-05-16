@@ -6,9 +6,9 @@ import isNil from "lodash/isNil";
 
 import './styles.css';
 import * as songActions from '../../actions/songs';
-import * as selectors from '../../reducers';
-import * as postActions from "../../actions/posts";
-import play_icon from '../../resources/play-icon.svg';
+// import * as selectors from '../../reducers';
+// import * as postActions from "../../actions/posts";
+// import play_icon from '../../resources/play-icon.svg';
 
 const apiCall = (type, searchTerm) =>{
     const getIDWithInfo = `https://api.deezer.com/search/${type}/?q=${searchTerm}`;
@@ -33,8 +33,8 @@ const submit = (state, dispatch, { allForms }) =>{
     if(allForms.values){
         apiCall('track', allForms.values.toLook)
         .then(function (response) {
-            response.data.data.slice(0,5).map(
-                song => dispatch(songActions.findSong(song.id, song.title, song.artist.name, song.duration, song.album.cover_small))
+            response.data.data.slice(0,8).map(
+                song => dispatch(songActions.findSong(song.id, song.title, song.artist.name, song.duration, song.album.cover_small, song.album.title))
             )
         });
     }

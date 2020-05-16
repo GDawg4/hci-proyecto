@@ -31,7 +31,9 @@ const Login = ({ users, onAuth, isAuth }) => {
                     value={password}
                     onChange={e => changePassword(e.target.value)}
                 />
+                {/*eslint-disable-next-line*/}
                 <button className="button" type="submit" onClick={() => users.filter(user => user.username === username && user.password === user.password).length > 0 ? onAuth(true) : onAuth(false)}>
+                    {/*eslint-disable-next-line*/}
                     <Link to={username && password ? users.filter(user => user.username === username && user.password === user.password).length > 0 ? "/feed" : "" : ""} className="login-button-link">{'Iniciar sesión'}</Link>
                 </button>
                 <span className="to-registro">¿No tienes una cuenta? <Link to="/registro">Haz clic aquí para registrarte</Link></span>

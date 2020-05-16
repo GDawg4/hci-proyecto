@@ -8,13 +8,20 @@
 }
 
 .player-wrapper{
-    border-radius: 1rem;
-    width: fit-content;
-    position: fixed;
-    display: flex;
-    flex-direction: row;
+    position: relative;
+    overflow: hidden;
+    width: 400px;
+    height: 350px;
+    transform: translate(3%, 5%);
+    padding-top: 100%; 
+    border: none;
 }
 
-.player {
-    align-self: center;
+.responsive-iframe {
+    border: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
 }

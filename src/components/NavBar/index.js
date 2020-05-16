@@ -3,9 +3,6 @@ import styled from 'styled-components';
 
 import Logo from '../Logo';
 import Links from '../Links';
-import MusicPlayer from "../MusicPlayer";
-import {connect} from 'react-redux'
-import * as selectors from '../../reducers'
 
 const Container = styled.div.attrs({
     className: 'container',

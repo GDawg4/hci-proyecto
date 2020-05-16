@@ -6,7 +6,7 @@ import logo from '../../resources/logo.svg';
 const Wrapper = styled.a.attrs({
     className: 'navbar-brand',
 })`
-    padding-top: 32px;
+    padding-top: 64px;
     padding-bottom: 0px;
 `
 

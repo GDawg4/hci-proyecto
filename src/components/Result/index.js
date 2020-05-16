@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import { selectSong } from "../../actions/songs";
+// import { selectSong } from "../../actions/songs";
 
 import './styles.css';
 import * as songActions from '../../actions/songs';
@@ -26,19 +26,19 @@ function fancyTimeFormat(time)
     return ret;
 }
 
-const Result = ({ songID, title, artist, coverSource, duration, selectSong }) =>(
+const Result = ({ /*songID,*/ title, artist, coverSource, duration, selectSong, album }) =>(
     <div className='result-wrapper' onClick={selectSong}>
-        <img className="result-image" src={ coverSource } width={'75'} />
+        <img className="result-image" alt="result" src={ coverSource } width={'75'} />
         <div className = 'result-info'>
             <div className = 'result-title'>
                 {title}
             </div>
             <div className = 'result-artist'>
-                {artist}
+                {`${artist} - ${album}`}
             </div>
         </div>
         <div className='result-rest'>
-            <img className='play-btn' onClick={selectSong} src={play_icon} height={50} width={50}/>
+            <img className='play-btn' alt="play" onClick={selectSong} src={play_icon} height={50} width={50}/>
             <div className='result-duration'>{fancyTimeFormat(duration)}</div>
         </div>
     </div>
@@ -48,7 +48,7 @@ const Result = ({ songID, title, artist, coverSource, duration, selectSong }) =>
 
 export default connect(
     undefined,
-    (dispatch, { songID, title })=> ({
+    (dispatch, { songID/*, title*/ })=> ({
         selectSong(){
             dispatch(songActions.selectSong(songID))
         }

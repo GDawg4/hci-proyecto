@@ -5,12 +5,12 @@ import songsReducer from "./songs";
 
 import * as selectors from './user';
 import * as postSelectors from './posts'
-import * as postTypes from '../types/posts';
+// import * as postTypes from '../types/posts';
 import * as navigationTypes from '../types/navigation';
 import * as authTypes from '../types/auth';
 import * as songSelectors from './songs'
-import omit from 'lodash/omit';
-import isNil from 'lodash/isNil'
+// import omit from 'lodash/omit';
+// import isNil from 'lodash/isNil'
 
 
 // Se combinan los reductores de evento y bebe

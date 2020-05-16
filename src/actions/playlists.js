@@ -1,22 +1,39 @@
 import * as types from '../types/playlists'
 
-export const likePlaylist = (playlistID) =>({
+export const likePlaylist = playlistId =>({
     type:types.PLAYLIST_LIKED,
-    payload:{playlistID}
+    payload:{
+        playlistId
+    }
 });
 
-export const sharePlaylist = (playlistID, content) =>({
-    types:types.PLAYLIST_SHARED,
-    payload:{playlistID, content}
+export const sharePlaylist = (playlistId, content) =>({
+    types: types.PLAYLIST_SHARED,
+    payload: {
+        playlistId, 
+        content
+    }
 });
 
-export const addSongToPlaylist = (playlistID, songID) => ({
-    type:types.ADDED_SONG,
-    payload:{playlistID, songID}
+export const addSongToPlaylist = (playlistId, songId) => ({
+    type: types.PLAYLIST_SONG_ADDED,
+    payload:{
+        playlistId,
+        songId
+    }
 });
 
-export const removeSongFromPlaylist = (playlistID, songID) => ({
-    type:types.REMOVED_SONG,
-    payload:{playlistID, songID}
+export const removeSongFromPlaylist = (playlistId, songId) => ({
+    type: types.PLAYLIST_SONG_REMOVED,
+    payload: {
+        playlistId, 
+        songId
+    }
 });
 
+export const selectPlaylist = playlistId => ({
+    type: types.PLAYLIST_SELECTED,
+    payload: {
+        playlistId,
+    }
+})
