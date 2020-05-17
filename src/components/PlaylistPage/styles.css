@@ -1,9 +1,33 @@
-.default-message {
-    color: #19223F;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 5rem;
-    left: 30%;
-    position: absolute;
-    top: 50%;
-    transform: translate(50%, -50%);
+.playlist-page-container {
+    margin-left: 320px;
+    width: 900px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.playlist-full-image {
+    border-radius: 0 0 8px 8px;
+}
+
+.playlist-info-top {
+    display: flex;
+    flex-direction: row;
+}
+
+.playlist-page-container h1 {
+    position: relative;
+    color: #FFFFFF;
+    transform: translate(0, -100%);
+    padding: 16px;
+    flex: 6;
+    text-align: left;
+}
+
+.playlist-play-icono {
+    position: relative;
+    flex: 1;
+    transform: translate(0, -100%);
+    padding-right: 16px;
+    cursor: pointer;
 }

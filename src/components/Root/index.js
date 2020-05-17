@@ -2,11 +2,11 @@ import React from 'react';
 import { Provider } from 'react-redux';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
-import { Feed, Login, Top, Biblioteca, Chat, Opciones, Registro } from '../../components';
-import App from '../../app/index';
+import { Login, Registro } from '../../components';
+import Inside from '../Inside';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
-import MusicPlayer from "../MusicPlayer";
+
 
 
 const Root = ({ store }) => (
@@ -15,14 +15,9 @@ const Root = ({ store }) => (
       <Switch>
         <Route path ="/" exact component={Login} />
         <Route path ="/registro" exact component={Registro} />
-        <Route path="/feed" exact component={Feed} />
-        <Route path="/top/:filter" exact component={App} />
-        <Route path="/top" extact component={Top} />
-        <Route path="/biblioteca" extact component={Biblioteca} />
-        <Route path="/chat" extact component={Chat} />
-        <Route path="/opciones" extact component={Opciones} />
+        <Route path ="/app/:section" exact component={Inside} />
+        <Route path ="/app/top/:filter" exact component={Inside} />
       </Switch>
-      <MusicPlayer />
     </Router>
   </Provider>
 

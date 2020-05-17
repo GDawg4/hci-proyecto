@@ -1,14 +1,12 @@
 import React from 'react';
 
 import './styles.css';
-import NavBar from '../NavBar';
 import PlaylistCard from '../PlaylistCard';
 import cover_one from '../../resources/COVER.jpg';
 import cover_two from '../../resources/WP28.jpg';
 
 const Top = () => (
     <div>
-        <NavBar />
         <div className="top-screen-container">
             <h1>Top Charts</h1>
             <div id="test" className="top-playlists-container">

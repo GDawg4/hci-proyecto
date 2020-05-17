@@ -32,7 +32,7 @@ const Form = ({ handleSubmit, isLoggedIn }) => (
                     {'Su cuenta ha sido creada con éxito'}
                 </h1>
                 <button className="registro-button">
-                    <Link to="/feed">{'Clic para continuar'}</Link>
+                    <Link to="/app/feed">{'Clic para continuar'}</Link>
                 </button>
             </div> 
         :

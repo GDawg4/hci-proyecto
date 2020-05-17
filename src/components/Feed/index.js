@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 import './styles.css';
 import * as selectors from '../../reducers';
 import Post from '../Post';
-import NavBar from '../NavBar';
 import NewPost from "../NewPost";
 import reverse from 'lodash/reverse'
 // import MusicPlayer from "../MusicPlayer";
@@ -16,7 +15,6 @@ const height = content => {
 
 const Feed = ({ posts, selectedUser, text, songInfo}) => (
     <div>
-        <NavBar />
         <div className="feed-container">
             <NewPost selectedUser = {selectedUser} text = {text} songInfo = {songInfo}/>
             {posts.length > 0 ? reverse(posts).map(post =>

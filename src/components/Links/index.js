@@ -35,31 +35,31 @@ const Links = ({ selected, onSelect }) => (
         <Collapse>
             <List>
                 <Item onClick={() => onSelect('feed')} className={selected === "feed" ? "first-item item selected" : "first-item item"}>
-                    <Link to="/feed" className={"navbar-link"}>
+                    <Link to="/app/feed" className={"navbar-link"}>
                         <img src={inicio_white} width="45" height="45" alt="home"/>
                         <div className="section-name">Inicio</div>
                     </Link>
                 </Item>    
                 <Item onClick={() => onSelect('top')} className={selected === "top" ? "item selected" : "item"}>
-                    <Link to="/top" className={"navbar-link"}>
+                    <Link to="/app/top" className={"navbar-link"}>
                         <img src={top_white} width="45" height="45" alt="top"/>
                         <div className="section-name">Top</div>
                     </Link>
                 </Item>
                 <Item onClick={() => onSelect('biblioteca')} className={selected === "biblioteca" ? "item selected" : "item"}>
-                    <Link to="/biblioteca" className={"navbar-link"}>
+                    <Link to="/app/biblioteca" className={"navbar-link"}>
                         <img src={biblioteca_white} width="45" height="45" alt="biblioteca"/>   
                         <div className="section-name">Biblioteca</div>
                     </Link>
                 </Item>
                 <Item onClick={() => onSelect('chat')} className={selected === "chat" ? "item selected" : "item"}>
-                    <Link to="/chat" className={"navbar-link"}>
+                    <Link to="/app/chat" className={"navbar-link"}>
                         <img src={chat_white} width="45" height="45" alt="chat"/>
                         <div className="section-name">Mensajes</div>
                     </Link>
                 </Item>
                 <Item onClick={() => onSelect('opciones')} className={selected === "opciones" ? "item selected" : "item"}>
-                    <Link to="/opciones" className={"navbar-link"}>
+                    <Link to="/app/opciones" className={"navbar-link"}>
                         <img src={opciones_white} width="45" height="45" alt="opciones"/>
                         <div className="section-name">Opciones</div>
                     </Link>

@@ -47,4 +47,5 @@
 
 .playlist-link:hover {
     text-decoration: none;
+    cursor: unset;
 }

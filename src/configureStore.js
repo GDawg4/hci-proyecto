@@ -23,7 +23,7 @@ const configureStore = () => {
     );
 
     store.subscribe(throttle(() => {
-    saveState(store.getState())
+        saveState(store.getState())
     }, 1000));
 
     // deleteState(store.getState());
