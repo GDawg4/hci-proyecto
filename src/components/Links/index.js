@@ -6,6 +6,7 @@ import styled from 'styled-components';
 import './styles.css';
 import * as selectors from '../../reducers';
 import * as actions from '../../actions/navigation';
+import * as authActions from '../../actions/auth';
 
 import inicio_white from '../../resources/inicio-white.svg';
 import top_white from '../../resources/top-white.svg';
@@ -30,7 +31,7 @@ const Item = styled.div.attrs({
     className: 'collapse navbar-collapse'
 })``
 
-const Links = ({ selected, onSelect }) => (
+const Links = ({ selected, onSelect, logOut }) => (
     <Fragment>
         <Collapse>
             <List>
@@ -58,8 +59,8 @@ const Links = ({ selected, onSelect }) => (
                         <div className="section-name">Mensajes</div>
                     </Link>
                 </Item>
-                <Item onClick={() => onSelect('opciones')} className={selected === "opciones" ? "item selected" : "item"}>
-                    <Link to="/app/opciones" className={"navbar-link"}>
+                <Item onClick={() => logOut()} className={selected === "opciones" ? "item selected" : "item"}>
+                    <Link to="/" className={"navbar-link"}>
                         <img src={opciones_white} width="45" height="45" alt="opciones"/>
                         <div className="section-name">Opciones</div>
                     </Link>
@@ -76,6 +77,9 @@ export default connect(
     dispatch => ({
         onSelect(selected){
             dispatch(actions.changeSection(selected))
+        },
+        logOut(){
+            dispatch(authActions.logOut())
         }
     }),
 )(Links)

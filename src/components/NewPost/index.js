@@ -20,7 +20,8 @@ const NewPost = ({ handleSubmit }) => {
                 </div>
                 <button className='submit-post' type='submit'>Publicar</button>
             </div>
-        </form>)
+        </form>
+    )
 }
 
 const submit = (state, dispatch, { selectedUser, text, songInfo }) => {

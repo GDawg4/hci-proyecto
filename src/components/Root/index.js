@@ -1,26 +1,41 @@
 import React from 'react';
-import { Provider } from 'react-redux';
+import { Provider, connect } from 'react-redux';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
-import { Login, Registro } from '../../components';
-import Inside from '../Inside';
+import { Login, Registro, Feed, Top, Biblioteca, Chat } from '../../components';
+import App from '../../app/index';
+import MusicPlayer from '../MusicPlayer';
+import NavBar from '../NavBar';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
+import * as selectors from '../../reducers';
 
 
-
-const Root = ({ store }) => (
+const Root = ({ store, isLoggedIn }) => (
   <Provider store={store}>
     <Router>
+      {
+        isLoggedIn ? <NavBar /> : <div/>
+      }
+      {
+        isLoggedIn ? <MusicPlayer /> : <div/>
+      }
       <Switch>
         <Route path ="/" exact component={Login} />
         <Route path ="/registro" exact component={Registro} />
-        <Route path ="/app/:section" exact component={Inside} />
-        <Route path ="/app/top/:filter" exact component={Inside} />
+        <Route path="/app/feed" exact component={Feed} />
+        <Route path="/app/top/:filter" exact component={App} />
+        <Route path="/app/top" extact component={Top} />
+        <Route path="/app/biblioteca" extact component={Biblioteca} />
+        <Route path="/app/chat" extact component={Chat} />
       </Switch>
     </Router>
   </Provider>
 
 )
 
-export default Root;
+export default connect(
+  state => ({
+    isLoggedIn: selectors.isLoggedIn(state)
+  })
+)(Root);

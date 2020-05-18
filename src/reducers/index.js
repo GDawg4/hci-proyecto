@@ -2,18 +2,17 @@ import { combineReducers } from 'redux';
 import postReducer from "./posts";
 import users from './user';
 import songsReducer from "./songs";
+import playlistReducer from './playlists';
 
 import * as selectors from './user';
 import * as postSelectors from './posts'
+import * as playlistSelectors from './playlists';
 // import * as postTypes from '../types/posts';
 import * as navigationTypes from '../types/navigation';
 import * as authTypes from '../types/auth';
 import * as songSelectors from './songs'
 // import omit from 'lodash/omit';
 // import isNil from 'lodash/isNil'
-
-
-// Se combinan los reductores de evento y bebe
 
 
 const navigationReducer = (state = 'feed', action) => {
@@ -33,7 +32,10 @@ const auth = (state = null, action) => {
             return "COMPLETED";
         }
         case authTypes.AUTH_FAILED: {
-            return "FAILED"
+            return "FAILED";
+        }
+        case authTypes.LOGOUT_COMPLETED: {
+            return null;
         }
         default: {
             return state;
@@ -45,6 +47,9 @@ const loggedIn = (state = false, action) => {
     switch (action.type) {
         case authTypes.AUTH_COMPLETED: {
             return true;
+        }
+        case authTypes.LOGOUT_COMPLETED: {
+            return false;
         }
         default: {
             return state;
@@ -58,7 +63,8 @@ const reducer = combineReducers({
     users,
     auth,
     loggedIn,
-    songsReducer
+    songsReducer,
+    playlistReducer,
 })
 
 export default reducer;
@@ -77,3 +83,7 @@ export const getSongById = (state, id) => songSelectors.getSongByID(state.songsR
 export const getCurrentlySelected = (state) => songSelectors.getCurrentlySelected(state.reducer)
 //songSelectors.getSongByID(state.reducer, getCurrentlySelected(state))
 export const getCurrentlySelectedInfo = (state) => songSelectors.getSongByID(state.reducer, getCurrentlySelected(state))
+
+export const getPlaylistById = (state, id) => playlistSelectors.getPlaylistById(state.reducer.playlistReducer, id);
+export const getAllPlaylists = state => playlistSelectors.getAllPlaylists(state.reducer.playlistReducer);
+export const getSelectedPlaylist = state => playlistSelectors.getSelectedPlaylist(state.reducer.playlistReducer);

@@ -21,13 +21,13 @@ const axios = require('axios').default;*/
     console.log(response.data.data[0].id)
 });*/
 
-const MusicPlayer = ({ allForms, songs, currentlySelected, isEmpty, isActive }) =>
+const MusicPlayer = ({ allForms, songs, currentlySelected, isEmpty = true, isActive = false}) =>
     (
     <div className='music-player'>
         <MusicForm allForms = {allForms}/>
         <SearchResults songs={songs} isEmpty={isEmpty} isActive={isActive}/>
         <div className="player-wrapper">
-            <Iframe className="responsive-iframe" scrolling="no" frameborder="0" allowTransparency="tru" src= {`https://www.deezer.com/plugins/player?format=square&autoplay=true&playlist=false&width=400&height=400&color=F59320&layout=&size=big&type=tracks&id=${currentlySelected}&app_id=1`} width="400" height="400"/>
+            <Iframe className="responsive-iframe" scrolling="no" frameborder="0" allowTransparency="true" src= {`https://www.deezer.com/plugins/player?format=square&autoplay=true&playlist=false&width=400&height=400&color=F59320&layout=&size=big&type=tracks&id=${currentlySelected}&app_id=1`} width="400" height="400"/>
         </div>
     </div>
 );
@@ -38,8 +38,8 @@ export default  connect(
         allForms: selectors.getFormsSearch(state),
         songs: selectors.getAllSongs(state),
         currentlySelected: selectors.getCurrentlySelected(state),
-        isEmpty: state.form.search.values === undefined,
-        isActive: state.form.search.active !== undefined,
+        isEmpty: state.form.search ? state.form.search.values === undefined : null,
+        isActive: state.form.search ? state.form.search.active !== undefined : null,
     }),
     undefined
 )(MusicPlayer)

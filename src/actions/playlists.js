@@ -37,3 +37,14 @@ export const selectPlaylist = playlistId => ({
         playlistId,
     }
 })
+
+export const addPlaylist = (id, name, description, cover, tracks) => ({
+    type: types.PLAYLIST_FETCH_COMPLETED,
+    payload: {
+        id,
+        name, 
+        description,
+        cover,
+        tracks,
+    }
+})

@@ -8,5 +8,6 @@ import Biblioteca from './Biblioteca';
 import Chat from './Chat';
 import Opciones from './Opciones';
 import Registro from './Registro';
+import Logout from './Logout'
 
-export { Links, Logo, NavBar, Feed, Login, Top, Biblioteca, Chat, Opciones, Registro };
+export { Links, Logo, NavBar, Feed, Login, Top, Biblioteca, Chat, Opciones, Registro, Logout };

@@ -9,3 +9,8 @@ export const failAuth = () => ({
     type: types.AUTH_FAILED,
     payload: {}
 });
+
+export const logOut = () => ({
+    type: types.LOGOUT_COMPLETED,
+    payload: {}
+})

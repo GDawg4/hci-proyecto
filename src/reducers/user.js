@@ -1,6 +1,7 @@
 import { combineReducers } from 'redux';
 
 import * as types from '../types/users';
+import * as authTypes from '../types/auth';
 import omit from 'lodash/omit';
 
 const userById = (state = {}, action) => {
@@ -37,6 +38,9 @@ const selectedUser = (state = null, action) =>{
     switch (action.type) {
         case types.USER_CREATED:{
             return action.payload.id
+        }
+        case authTypes.LOGOUT_COMPLETED: {
+            return null;
         }
         default:{
             return state
