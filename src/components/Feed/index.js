@@ -1,10 +1,11 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import './styles.css';
-import * as selectors from '../../reducers';
 import Post from '../Post';
 import NewPost from "../NewPost";
-import reverse from 'lodash/reverse'
+
+import './styles.css';
+import * as selectors from '../../reducers';
+import reverse from 'lodash/reverse';
 // import MusicPlayer from "../MusicPlayer";
 
 
