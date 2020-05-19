@@ -17,7 +17,7 @@ const PlaylistPage = ({ filter, playlist, onSelect }) => (
         <div className="playlist-page-top">    
             <img alt="cover" className="playlist-full-image" src={playlist.cover} />
             <div className="playlist-info-top">
-                <h1 onClick={() => test(playlist)}>{playlist.name}</h1>
+                <h1>{playlist.name}</h1>
                 <h2>{playlist.description}</h2>
                 <img onClick={() => onSelect(playlist.tracks.data[0].id)} alt="play" src={play_button} className="playlist-play-icono" height="50" width="50"/>
             </div>
