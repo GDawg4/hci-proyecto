@@ -8,14 +8,12 @@
     cursor: pointer;
 }
 
-.song-image{
-    border-radius: 8px;
+.song-container:hover {
+    background-color: rgb(245, 147, 32, 0.3);
 }
 
-.song-basic {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
+.song-image{
+    border-radius: 8px;
 }
 
 .song-title {
@@ -23,9 +21,23 @@
 }
 
 .song-item {
-    flex: 1;
-    text-align: center;
+    text-align: left;
     font-size: larger;
+}
+
+.song-basic {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex: 2;
+}
+
+.song-artist {
+    flex: 1.5;
+}
+
+.song-album {
+    flex: 1;
 }
 
 .song-text {

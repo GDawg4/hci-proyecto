@@ -6,6 +6,7 @@ import Song from '../Song';
 
 import './styles.css';
 import * as selectors from '../../reducers';
+import * as songActions from '../../actions/songs'
 
 import play_button from '../../resources/play-icon-orange.svg';
 import arrow from '../../resources/back-arrow-blue.svg';
@@ -18,7 +19,7 @@ const PlaylistPage = ({ filter, playlist, onSelect }) => (
             <div className="playlist-info-top">
                 <h1 onClick={() => test(playlist)}>{playlist.name}</h1>
                 <h2>{playlist.description}</h2>
-                <img alt="play" src={play_button} className="playlist-play-icono" height="50" width="50"/>
+                <img onClick={() => onSelect(playlist.tracks.data[0].id)} alt="play" src={play_button} className="playlist-play-icono" height="50" width="50"/>
             </div>
         </div>
         <div className="playlist-songs-info">
@@ -41,5 +42,9 @@ export default connect(
     (state, { filter }) => ({
         playlist: selectors.getPlaylistById(state, filter)
     }),
-    undefined,
+    dispatch => ({
+        onSelect(id){
+            dispatch(songActions.selectSong(id))
+        }
+    })
 )(PlaylistPage);
