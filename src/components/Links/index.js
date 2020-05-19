@@ -80,6 +80,7 @@ export default connect(
         },
         logOut(){
             dispatch(authActions.logOut())
+            dispatch(actions.changeSection('feed'))
         }
     }),
 )(Links)

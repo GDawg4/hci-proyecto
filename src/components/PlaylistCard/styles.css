@@ -28,6 +28,11 @@
     padding-left: 8px;
     font-size: 24px;
     margin-bottom: 0;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .card-description {

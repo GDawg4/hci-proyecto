@@ -34,7 +34,7 @@ const submit = (state, dispatch, { allForms }) =>{
         apiCall('track', allForms.values.toLook)
         .then(function (response) {
             response.data.data.slice(0,8).map(
-                song => dispatch(songActions.findSong(song.id, song.title, song.artist.name, song.duration, song.album.cover_small, song.album.title))
+                song => dispatch(songActions.findSong(song.id, song.title, song.artist.name, song.duration, song.album.cover_medium, song.album.title))
             )
         });
     }
