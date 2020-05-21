@@ -75,6 +75,7 @@ export const getAllPosts = (state) => postSelectors.getAllPosts(state.reducer);
 export const getUserById = (state, id) => selectors.getUserById(state.reducer.users, id);
 export const getSelectedUser = (state) => selectors.getSelectedUser(state.reducer);
 export const getAllFollowing = (state) => selectors.getAllFollowing(state.reducer, getSelectedUser(state));
+export const getIsFollowing = (state) => selectors.getIsFollowing(state.reducer);
 export const getSeenUser = (state) => selectors.getSeenUser(state.reducer);
 export const getUsers = state => selectors.getUsers(state.reducer.users);
 export const getSomething = state => state;

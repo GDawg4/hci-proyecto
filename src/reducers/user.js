@@ -3,6 +3,8 @@ import { combineReducers } from 'redux';
 import * as types from '../types/users';
 import * as authTypes from '../types/auth';
 import omit from 'lodash/omit';
+import filter from 'lodash/filter'
+import includes from 'lodash/includes'
 
 const userById = (state = {}, action) => {
     switch (action.type){
@@ -90,7 +92,7 @@ const following = (state = {}, action) => {
             }
         }
         case types.USER_UNFOLLOWED:{
-            const newState = omit(state[action.payload.currentUser], action.payload.targetUser)
+            const newState = filter(state[action.payload.currentUser], value => value !== action.payload.targetUser)
             return {
                 ...state,
                 [action.payload.currentUser]:newState
@@ -117,4 +119,5 @@ export const getSeenUser = (state) => state.users.seenUser;
 export const getUserById = (state, id) => state.userById[id];
 export const getUsers = state => state.userByOrder.map(id => getUserById(state, id));
 export const getSearchParameter = state => state.searchedUser;
-export const getAllFollowing = (state, currentUser) => state.users.following[currentUser]
+export const getAllFollowing = (state, currentUser) => state.users.following[currentUser];
+export const getIsFollowing = (state) => includes(getAllFollowing(state, getSelectedUser(state)), getSeenUser(state));
