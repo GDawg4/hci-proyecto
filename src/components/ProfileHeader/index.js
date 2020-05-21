@@ -15,7 +15,7 @@ const ProfileHeader = ({seenUser, follow, isFollowing, unfollow}) => (
     <div>
         <div className='new-post'>
             <img alt="default-user" className='new-post-user' src={default_image}/>
-            <div className='user-header'>{`${seenUser.name} ${seenUser.lastName} ${isFollowing}`}</div>
+            <div className='user-header'>{`${seenUser.name} ${seenUser.lastName}`}</div>
             {isFollowing ? <button className='follow-button' onClick={unfollow}>No seguir</button> :
                 <button className='follow-button' onClick={follow}>Seguir</button>}
         </div>

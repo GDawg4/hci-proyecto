@@ -17,7 +17,7 @@ const PeopleResults = ({ users, isEmpty, isActive }) => (
 
 export default connect(
     (state) =>({
-        users:selectors.getUsers(state)
+        users:selectors.getUsers(state).filter(user => user.id !== selectors.getSelectedUser(state))
     }),
     undefined
 )(PeopleResults);

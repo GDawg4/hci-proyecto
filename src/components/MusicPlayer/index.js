@@ -8,6 +8,7 @@ import PeopleResults from "../PeopleResults";
 
 import './styles.css';
 import * as selectors from "../../reducers";
+import * as userActions from '../../actions/users'
 import Tabs from "@material-ui/core/Tabs";
 import Tab from "@material-ui/core/Tab";
 import {createMuiTheme, makeStyles, ThemeProvider} from "@material-ui/core/styles";
@@ -15,6 +16,7 @@ import Paper from "@material-ui/core/Paper";
 import reverse from "lodash/reverse";
 import Post from "../Post";
 import Index from "../PeopleForm";
+import {Link} from "react-router-dom";
 
 // const type = 'tracks';
 // const id = '457602422';
@@ -52,7 +54,7 @@ const theme = createMuiTheme({
     }
 })
 
-const MusicPlayer = ({ allForms, songs, currentlySelected, isEmpty = true, isActive = false, peopleForms, lookedUp}) =>{
+const MusicPlayer = ({ allForms, songs, currentlySelected, isEmpty = true, isActive = false, peopleForms, lookedUp, selectOwnUser}) =>{
     const classes = useStyles();
     const [selectedTab, setValue] = React.useState(0);
 
@@ -61,6 +63,11 @@ const MusicPlayer = ({ allForms, songs, currentlySelected, isEmpty = true, isAct
     };
     return (
         <div className='music-player'>
+            <div className='own-profile' onClick={selectOwnUser}>
+                <Link to={'/app/profile'}>
+                    Al perfil
+                </Link>
+            </div>
             <Paper className={classes.root}>
                 <ThemeProvider theme={theme}>
                     <Tabs
@@ -102,9 +109,26 @@ export default  connect(
         peopleForms:selectors.getFormsPeople(state),
         songs: selectors.getAllSongs(state),
         currentlySelected: selectors.getCurrentlySelected(state),
+        currentUser:selectors.getSelectedUser(state),
         isEmpty: state.form.search ? state.form.search.values === undefined : null,
         isActive: state.form.search ? state.form.search.active !== undefined : null,
         lookedUp:selectors.getSearchedParameter(state)
     }),
-    undefined
+    (dispatch)=>({
+        selectUser(currentUser){
+            dispatch(userActions.selectUser(currentUser))
+        }
+    }),
+    (stateProps, dispatchProps) => ({
+        allForms: stateProps.allForms,
+        peopleForms:stateProps.peopleForms,
+        songs: stateProps.songs,
+        currentlySelected: stateProps.currentlySelected,
+        isEmpty: stateProps.isEmpty,
+        isActive: stateProps.isActive,
+        lookedUp:stateProps.lookedUp,
+        selectOwnUser(){
+            dispatchProps.selectUser(stateProps.currentUser)
+        }
+    })
 )(MusicPlayer)
