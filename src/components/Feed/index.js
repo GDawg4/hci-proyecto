@@ -6,6 +6,7 @@ import NewPost from "../NewPost";
 import './styles.css';
 import * as selectors from '../../reducers';
 import reverse from 'lodash/reverse';
+import includes from 'lodash/includes'
 // import MusicPlayer from "../MusicPlayer";
 
 
@@ -14,11 +15,11 @@ const height = content => {
     return result;
 }
 
-const Feed = ({ posts, selectedUser, text, songInfo}) => (
+const Feed = ({ posts, selectedUser, text, songInfo, currentUser, allFollowing}) => (
     <div>
         <div className="feed-container">
             <NewPost selectedUser = {selectedUser} text = {text} songInfo = {songInfo}/>
-            {posts.length > 0 ? reverse(posts).map(post =>
+            {posts.length > 0 ? reverse(posts).filter(post => includes(allFollowing, post.username)).map(post =>
                 <Post key={post.id} source={post.source} index={post.id} height={height(post.content)} {...post}/>
             ) : <div className="default-message">NO HAY POSTS</div>}
         </div>
@@ -32,7 +33,9 @@ export default connect(
         posts: selectors.getAllPosts(state),
         selectedUser: selectors.getUserById(state, selectors.getSelectedUser(state)),
         text:selectors.getFormsNewPost(state),
-        songInfo:selectors.getCurrentlySelectedInfo(state)
+        songInfo:selectors.getCurrentlySelectedInfo(state),
+        currentUser:selectors.getUserById(state, selectors.getSelectedUser(state)),
+        allFollowing:selectors.getAllFollowing(state).map(user => selectors.getUserById(state, user).username)
     }),
     undefined,
 )(Feed);

@@ -27,3 +27,31 @@ export const selectUser = id => ({
         id
     }
 });
+
+export const searchUser = parameter =>({
+    type:types.USER_SEARCHED,
+    payload:{
+        parameter
+    }
+})
+
+export const searchUserCleared = () => ({
+    type:types.USER_SEARCHED_CLEARED,
+    payload:{}
+})
+
+export const followUser = (currentUser, targetUser) =>({
+    type:types.USER_FOLLOWED,
+    payload:{
+        currentUser,
+        targetUser
+    }
+})
+
+export const unfollowUser = (currentUser, targetUser) =>({
+    type:types.USER_UNFOLLOWED,
+    payload:{
+        currentUser,
+        targetUser
+    }
+})

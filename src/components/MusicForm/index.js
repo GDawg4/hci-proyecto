@@ -21,7 +21,7 @@ const MusicFormDiv = ({ handleSubmit }) => (
     <div className='music-form-container'>
         <form onSubmit={handleSubmit}>
             <div className='music-form'>
-                <Field name ='toLook' component='input' type='text' className='search-text-field same-line' placeholder={'Descubre música'}></Field>
+                <Field name ='toLook' component='input' type='text' className='search-text-field same-line' placeholder={'Descubre música'}/>
                 <button className='search-song same-line' type='submit'>Buscar</button>
             </div>
         </form>
@@ -38,8 +38,9 @@ const submit = (state, dispatch, { allForms }) =>{
             )
         });
     }
-    isNil(allForms.values) ? console.log('This is nothing', allForms.values) : console.log(allForms.values.toLook)
 }
+
+
 
 const MusicForm = reduxForm({
     form: 'search', 

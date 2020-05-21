@@ -6,6 +6,7 @@ import { Login, Registro, Feed, Top, Biblioteca, Chat } from '../../components';
 import App from '../../app/index';
 import MusicPlayer from '../MusicPlayer';
 import NavBar from '../NavBar';
+import Profile from "../Profile";
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import * as selectors from '../../reducers';
@@ -28,6 +29,7 @@ const Root = ({ store, isLoggedIn }) => (
         <Route path="/app/top" extact component={Top} />
         <Route path="/app/biblioteca" extact component={Biblioteca} />
         <Route path="/app/chat" extact component={Chat} />
+        <Route path='/app/profile' exact component={Profile}/>
       </Switch>
     </Router>
   </Provider>

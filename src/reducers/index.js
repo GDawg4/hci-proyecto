@@ -72,12 +72,17 @@ export default reducer;
 export const isLoggedIn = state => state.reducer.loggedIn;
 export const getSelectedSection = (state) => state.reducer.navigationReducer;
 export const getAllPosts = (state) => postSelectors.getAllPosts(state.reducer);
-export const getUserById = (state, id) => selectors.getUserById(state.reducer, id);
+export const getUserById = (state, id) => selectors.getUserById(state.reducer.users, id);
 export const getSelectedUser = (state) => selectors.getSelectedUser(state.reducer);
-export const getUsers = state => selectors.getUsers(state.reducer);
+export const getAllFollowing = (state) => selectors.getAllFollowing(state.reducer, getSelectedUser(state));
+export const getSeenUser = (state) => selectors.getSeenUser(state.reducer);
+export const getUsers = state => selectors.getUsers(state.reducer.users);
+export const getSomething = state => state;
+export const getSearchedParameter = state => selectors.getSearchParameter(state.reducer.users)
 export const getAuth = state => state.reducer.auth;
 export const getFormsNewPost = state => state.form.newPost;
 export const getFormsSearch = state => state.form.search;
+export const getFormsPeople = state => state.form.searchPeople
 export const getAllSongs = state => songSelectors.getAllSongs(state.reducer)
 export const getSongById = (state, id) => songSelectors.getSongByID(state.songsReducer, id)
 export const getCurrentlySelected = (state) => songSelectors.getCurrentlySelected(state.reducer)

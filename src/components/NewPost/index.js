@@ -25,7 +25,7 @@ const NewPost = ({ handleSubmit }) => {
 }
 
 const submit = (state, dispatch, { selectedUser, text, songInfo }) => {
-    isNil(text.values) ? console.log('This is nothing ', text.values) : dispatch(postActions.publishPost(`${selectedUser.name} ${selectedUser.lastName}`, selectedUser.username, 0, text.values.newPostText, songInfo.cover))
+    isNil(text.values) ? console.log('This is nothing ', text.values) : dispatch(postActions.publishPost(`${selectedUser.name} ${selectedUser.lastName}`, selectedUser.username, 0, text.values.newPostText, 'songInfo.cover'))
     dispatch(reset('newPost'))
 }
 

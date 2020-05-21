@@ -34,13 +34,11 @@ const userByOrder = (state = [], action) => {
         }
     }
 }
+
 const selectedUser = (state = null, action) =>{
     switch (action.type) {
-        case types.USER_CREATED: {
-            return action.payload.id;
-        }
-        case types.USER_SELECTED: {
-            return action.payload.id;
+        case types.USER_CREATED:{
+            return action.payload.id
         }
         case authTypes.LOGOUT_COMPLETED: {
             return null;
@@ -51,14 +49,72 @@ const selectedUser = (state = null, action) =>{
     }
 }
 
-const users = combineReducers({
+const seenUser = (state = null, action) => {
+    switch (action.type) {
+        case types.USER_SELECTED: {
+            return action.payload.id;
+        }
+        default:{
+            return state
+        }
+    }
+}
+
+const searchedUser = (state = null, action) => {
+    switch (action.type) {
+        case types.USER_SEARCHED:{
+            return action.payload.parameter
+        }
+        case types.USER_SEARCHED_CLEARED:{
+            return null
+        }
+        default:{
+            return state
+        }
+    }
+}
+
+const following = (state = {}, action) => {
+    switch (action.type) {
+        case types.USER_CREATED: {
+            return {
+                ...state,
+                [action.payload.id]: []
+            };
+        }
+        case types.USER_FOLLOWED:{
+            const newState = [...state[action.payload.currentUser], action.payload.targetUser]
+            return {
+                ...state,
+                [action.payload.currentUser]:newState
+            }
+        }
+        case types.USER_UNFOLLOWED:{
+            const newState = omit(state[action.payload.currentUser], action.payload.targetUser)
+            return {
+                ...state,
+                [action.payload.currentUser]:newState
+            }
+        }
+        default:{
+            return state
+        }
+    }
+}
+
+export default combineReducers({
     selectedUser,
     userById,
     userByOrder,
+    searchedUser,
+    following,
+    seenUser
 })
 
-export default users;
 
 export const getSelectedUser = (state) => state.users.selectedUser;
-export const getUserById = (state, id) => state.users.userById[id];
-export const getUsers = state => state.users.userByOrder.map(id => getUserById(state, id));
+export const getSeenUser = (state) => state.users.seenUser;
+export const getUserById = (state, id) => state.userById[id];
+export const getUsers = state => state.userByOrder.map(id => getUserById(state, id));
+export const getSearchParameter = state => state.searchedUser;
+export const getAllFollowing = (state, currentUser) => state.users.following[currentUser]

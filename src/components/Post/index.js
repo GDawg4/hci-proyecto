@@ -9,6 +9,7 @@ import default_image from '../../resources/default.svg';
 import heart from '../../resources/heart.svg';
 import heart_o from '../../resources/heartOrange.png';
 import picture1 from '../../resources/logoLetras.svg';
+import {Link} from "react-router-dom";
 
 const Post = ({ user, content, likes, username, userLikes, userid, height, like, source }) => (
     <li className="post-list-item">
@@ -20,8 +21,10 @@ const Post = ({ user, content, likes, username, userLikes, userid, height, like,
                     </div>
                     <div className="post-data-container">
                         <div className="post-user">
-                            {user}
-                            <span> - @{username}</span>
+                            <Link to={'/app/profile'}>
+                                {user}
+                                <span> - @{username}</span>
+                            </Link>
                         </div>
                         <div className="post-content">
                             {content}
