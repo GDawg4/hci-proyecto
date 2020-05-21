@@ -81,7 +81,7 @@ const following = (state = {}, action) => {
         case types.USER_CREATED: {
             return {
                 ...state,
-                [action.payload.id]: []
+                [action.payload.id]: [action.payload.id]
             };
         }
         case types.USER_FOLLOWED:{

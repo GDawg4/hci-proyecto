@@ -11,13 +11,13 @@ import {logOut} from "../../actions/auth";
 import {unfollowUser} from "../../actions/users";
 import user from "../../reducers/user";
 
-const ProfileHeader = ({seenUser, follow, isFollowing, unfollow}) => (
+const ProfileHeader = ({seenUser, follow, isFollowing, unfollow, isSelf}) => (
     <div>
         <div className='new-post'>
             <img alt="default-user" className='new-post-user' src={default_image}/>
             <div className='user-header'>{`${seenUser.name} ${seenUser.lastName}`}</div>
-            {isFollowing ? <button className='follow-button' onClick={unfollow}>No seguir</button> :
-                <button className='follow-button' onClick={follow}>Seguir</button>}
+            {!isSelf? isFollowing  ? <button className='follow-button' onClick={unfollow}>No seguir</button> :
+                <button className='follow-button' onClick={follow}>Seguir</button>:<button className='follow-button'>Tu mismo</button>}
         </div>
     </div>
 )
@@ -40,15 +40,12 @@ export default connect(
     (stateProps, dispatchProps) => ({
         seenUser:stateProps.seenUser,
         currentUser:stateProps.currentUser,
+        isSelf: stateProps.seenUser === stateProps.currentUser,
         follow(){
             !includes(stateProps.transformedAllFollowing, stateProps.seenUser.username) ? dispatchProps.follow(stateProps.currentUser.id, stateProps.seenUser.id) : console.log('already')
-            //dispatchProps.follow(stateProps.currentUser.id, stateProps.seenUser.id)
-            //console.log(stateProps.transformedAllFollowing)
-            //console.log(stateProps.seenUser.username)
         },
         unfollow(){
             includes(stateProps.transformedAllFollowing, stateProps.seenUser.username) ? dispatchProps.unfollow(stateProps.currentUser.id, stateProps.seenUser.id) : console.log('already')
-            //console.log(stateProps.currentUser.id, stateProps.seenUser.id)
         },
         isFollowing:includes(stateProps.transformedAllFollowing, stateProps.seenUser.username)
     })
