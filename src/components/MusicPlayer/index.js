@@ -63,11 +63,6 @@ const MusicPlayer = ({ allForms, songs, currentlySelected, isEmpty = true, isAct
     };
     return (
         <div className='music-player'>
-            <div className='own-profile' onClick={selectOwnUser}>
-                <Link to={'/app/profile'}>
-                    Al perfil
-                </Link>
-            </div>
             <Paper className={classes.root}>
                 <ThemeProvider theme={theme}>
                     <Tabs
@@ -95,11 +90,11 @@ const MusicPlayer = ({ allForms, songs, currentlySelected, isEmpty = true, isAct
                     </div>
                 }
             </div>
-            {/*<div className="player-wrapper">
+            <div className="player-wrapper">
                 <Iframe className="responsive-iframe" scrolling="no" frameborder="0" allowTransparency="true"
                         src={`https://www.deezer.com/plugins/player?format=square&autoplay=true&playlist=false&width=400&height=400&color=F59320&layout=&size=big&type=tracks&id=${currentlySelected}&app_id=1`}
                         width="400" height="400"/>
-            </div>*/}
+            </div>
         </div>)}
 
 

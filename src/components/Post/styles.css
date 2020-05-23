@@ -89,3 +89,11 @@
 .post-list-item {
     list-style: none;
 }
+
+.post-user a {
+    color: #19223F;
+}
+
+.post-user a:hover {
+    text-decoration: none;
+}

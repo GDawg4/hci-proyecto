@@ -1,0 +1,16 @@
+.results{
+    height: 20rem;
+    align-content: center;
+    display: flex;
+    overflow: scroll;
+    flex-direction: column;
+    scrollbar-width: none;
+}
+
+.results p {
+    align-content: center;
+    text-align: center;
+    color: #19223F;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 2rem;
+}

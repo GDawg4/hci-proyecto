@@ -15,11 +15,11 @@ const height = content => {
     return result;
 }
 
-const Feed = ({ posts, selectedUser, text, songInfo, currentUser, allFollowing}) => (
+const Feed = ({ posts, selectedUser, text, songInfo, currentUser, allFollowing }) => (
     <div>
         <div className="feed-container">
             <NewPost selectedUser = {selectedUser} text = {text} songInfo = {songInfo}/>
-            {posts.length > 0 ? reverse(posts).filter(post => includes(allFollowing, post.username)).map(post =>
+            {posts.length > 0 ? reverse(posts).filter(post => includes(allFollowing, post.username) || post.username === selectedUser.username).map(post =>
                 <Post key={post.id} source={post.source} index={post.id} height={height(post.content)} {...post}/>
             ) : <div className="default-message">NO HAY POSTS</div>}
         </div>
@@ -28,14 +28,13 @@ const Feed = ({ posts, selectedUser, text, songInfo, currentUser, allFollowing})
 )
 
 export default connect(
-    (state, {index}) => (
-        {
+    (state, {index}) => ({
         posts: selectors.getAllPosts(state),
         selectedUser: selectors.getUserById(state, selectors.getSelectedUser(state)),
-        text:selectors.getFormsNewPost(state),
-        songInfo:selectors.getCurrentlySelectedInfo(state),
-        currentUser:selectors.getUserById(state, selectors.getSelectedUser(state)),
-        allFollowing:selectors.getAllFollowing(state).map(user => selectors.getUserById(state, user).username)
+        text: selectors.getFormsNewPost(state),
+        songInfo: selectors.getCurrentlySelectedInfo(state),
+        currentUser: selectors.getUserById(state, selectors.getSelectedUser(state)),
+        allFollowing: selectors.getAllFollowing(state) === undefined ? null : selectors.getAllFollowing(state).map(user => selectors.getUserById(state, user).username) 
     }),
     undefined,
 )(Feed);

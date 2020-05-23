@@ -24,3 +24,13 @@
     border-style: none;
     margin-left: 0.5rem;
 }
+
+.people-form-wrapper {
+    margin-bottom: 32px;
+}
+
+.people-form{
+    display: flex;
+    flex-direction: row;
+    width: 36rem;
+}

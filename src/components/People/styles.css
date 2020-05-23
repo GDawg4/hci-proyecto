@@ -1,0 +1,18 @@
+.result-info {
+    display: flex;
+    text-align: left;
+    flex: 4;
+    flex-direction: column;
+    margin-left: 2rem;
+    margin-right: 1rem;
+    flex: 3;
+}
+
+.userlink {
+    align-self: center;
+    flex: 1;
+}
+
+.userlink:hover {
+    text-decoration: none;
+}

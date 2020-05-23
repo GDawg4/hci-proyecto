@@ -1,5 +1,6 @@
 import React from 'react';
-import {connect} from "react-redux";
+import { connect } from "react-redux";
+import { Link } from "react-router-dom";
 
 import './styles.css';
 import * as selectors from '../../reducers';
@@ -9,7 +10,7 @@ import default_image from '../../resources/default.svg';
 import heart from '../../resources/heart.svg';
 import heart_o from '../../resources/heartOrange.png';
 import picture1 from '../../resources/logoLetras.svg';
-import {Link} from "react-router-dom";
+
 
 const Post = ({ user, content, likes, username, userLikes, userid, height, like, source }) => (
     <li className="post-list-item">

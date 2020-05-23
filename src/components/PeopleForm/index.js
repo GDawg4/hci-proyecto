@@ -9,8 +9,10 @@ import * as actions from "../../actions/users";
 const DummyPeopleForm = ({handleSubmit}) => (
     <div className='people-form-wrapper'>
         <form onSubmit={handleSubmit}>
-            <Field name='peopleSearch' component='input' type='text' className = 'search-text-field same-line' placeholder='Busca personas'/>
-            <button className='search-song same-line' type='submit'>Buscar</button>
+            <div className="people-form">
+                <Field name='peopleSearch' component='input' type='text' className = 'search-text-field same-line' placeholder='Busca personas'/>
+                <button className='search-song same-line' type='submit'>Buscar</button>
+            </div>
         </form>
     </div>
 )
