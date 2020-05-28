@@ -88,9 +88,6 @@ const songsSaved = (state = {}, action) => {
             };
         }
         case types.USER_SONG_SAVED:{
-            console.log(state)
-            console.log(action.payload.currentUser)
-            console.log(state[action.payload.currentUser])
             const newState = [...state[action.payload.currentUser], action.payload.songID]
             return {
                 ...state,
