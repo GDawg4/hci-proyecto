@@ -42,6 +42,9 @@ const selectedUser = (state = null, action) =>{
         case types.USER_CREATED:{
             return action.payload.id
         }
+        case types.USER_SELECTED: {
+            return action.payload.id
+        }
         case authTypes.LOGOUT_COMPLETED: {
             return null;
         }
@@ -53,7 +56,7 @@ const selectedUser = (state = null, action) =>{
 
 const seenUser = (state = null, action) => {
     switch (action.type) {
-        case types.USER_SELECTED: {
+        case types.USER_SEEN: {
             return action.payload.id;
         }
         default:{

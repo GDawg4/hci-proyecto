@@ -10,6 +10,8 @@ import * as userActions from '../../actions/users'
 import default_image from '../../resources/default.svg';
 import heart from '../../resources/heart.svg';
 import heart_o from '../../resources/heartOrange.png';
+import picture1 from '../../resources/logoLetras.svg';
+
 import logoO from '../../resources/Turntable_final_Turntable isotipo naranja.svg';
 import logoB from '../../resources/Turntable_final_Turntable isotipo negro.svg';
 import {Link} from "react-router-dom";
@@ -36,7 +38,7 @@ const Post = ({ user, content, likes, username, userLikes, userid, height, like,
                     </div>
                 </div>
                 <div className="likes-share">
-                    <img src={includes(userLikes, userid) ? heart_o : heart} className="heart" width="24" height="24" alt="like" onClick={ () => like(userid)}/>
+                    <img src={userLikes.includes(userid) ? heart_o : heart} className="heart" width="24" height="24" alt="like" onClick={ () => like(userid)}/>
                     <div className="likes">{likes}</div>
                     {includes(songsSaved[userid], songID) ?
                         <img src={logoO} className="heart" width="28" height="28" alt="save" onClick={() => unSave(userid, songsSaved)}/>:

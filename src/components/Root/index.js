@@ -28,7 +28,6 @@ const Root = ({ store, isLoggedIn }) => (
         <Route path="/app/top/:filter" exact component={App} />
         <Route path="/app/top" extact component={Top} />
         <Route path="/app/biblioteca" extact component={Biblioteca} />
-        <Route path="/app/chat" extact component={Chat} />
         <Route path='/app/profile' exact component={Profile}/>
       </Switch>
     </Router>

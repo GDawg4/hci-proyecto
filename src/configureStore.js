@@ -1,8 +1,8 @@
 import { createStore, combineReducers } from 'redux';
 import { reducer as formReducer } from 'redux-form';
 import { loadState, saveState} from './localStorage';
-import {devToolsEnhancer} from "redux-devtools-extension";
-import { deleteState } from './localStorage';
+import { devToolsEnhancer } from "redux-devtools-extension";
+// import { deleteState } from './localStorage';
 import throttle from 'lodash/throttle';
 
 import reducer from './reducers';
@@ -28,8 +28,9 @@ const configureStore = () => {
         saveState(store.getState())
     }, 1000));
 
-    deleteState(store.getState());
-    localStorage.clear()
+    // deleteState(store.getState());
+
+    store.subscribe(() => console.log(store.getState()))
 
     return store;
 }

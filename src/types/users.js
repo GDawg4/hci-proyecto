@@ -8,3 +8,4 @@ export const USER_FOLLOWED = 'USER_FOLLOWED';
 export const USER_UNFOLLOWED = 'USER_UNFOLLOWED';
 export const USER_SONG_SAVED = 'USER_SONG_SAVED';
 export const USER_SONG_UNSAVED = 'USER_SONG_UNSAVED'
+export const USER_SEEN = 'USER_SEEN';

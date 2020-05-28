@@ -13,21 +13,27 @@ const height = content => {
 }
 
 
-const Profile = ({name, posts}) =>(
-    <div className='profile-wrapper'>
-        <div className='posts-person'>
-            <ProfileHeader/>
-            {posts.length > 0 ? reverse(posts).filter(post => post.username === name).map(post =>
-                <Post key={post.id} source={post.source} index={post.id} height={height(post.content)} {...post}/>
-            ) : <div className="default-message">Este usuario no ha publicado</div>}
+const Profile = ({ name, posts, self_name, section }) => {
+    const user = section === 'perfil' ? self_name : name
+
+    return (
+        <div className='profile-wrapper'>
+            <div className='posts-person'>
+                <ProfileHeader />
+                {posts.length > 0 ? reverse(posts).filter(post => post.username === user).map(post =>
+                    <Post key={post.id} source={post.source} index={post.id} height={height(post.content)} {...post}/>
+                ) : <div className="default-message">Este usuario no ha publicado</div>}
+            </div>
         </div>
-    </div>
-)
+    )
+}
 
 export default connect(
     (state)=>({
-        posts:selectors.getAllPosts(state),
-        name: (selectors.getUserById(state, selectors.getSeenUser(state))) ? selectors.getUserById(state, selectors.getSeenUser(state)).username : 'nel'
+        posts: selectors.getAllPosts(state),
+        name: (selectors.getUserById(state, selectors.getSeenUser(state))) ? selectors.getUserById(state, selectors.getSeenUser(state)).username : 'nel',
+        self_name: selectors.getUserById(state, selectors.getSelectedUser(state)).username,
+        section: selectors.getSelectedSection(state)
     })
     ,
     undefined

@@ -7,11 +7,12 @@ import './styles.css';
 import * as selectors from '../../reducers';
 import * as actions from '../../actions/navigation';
 import * as authActions from '../../actions/auth';
+import * as userActions from '../../actions/users';
 
 import inicio_white from '../../resources/inicio-white.svg';
 import top_white from '../../resources/top-white.svg';
 import biblioteca_white from '../../resources/biblioteca-white.svg';
-import chat_white from '../../resources/chat-white.svg';
+import profile_white from '../../resources/profile.svg';
 import opciones_white from '../../resources/opciones-white.svg';
 
 
@@ -31,7 +32,7 @@ const Item = styled.div.attrs({
     className: 'collapse navbar-collapse'
 })``
 
-const Links = ({ selected, onSelect, logOut }) => (
+const Links = ({ selected, onSelect, logOut, selected_user }) => (
     <Fragment>
         <Collapse>
             <List>
@@ -53,16 +54,16 @@ const Links = ({ selected, onSelect, logOut }) => (
                         <div className="section-name">Biblioteca</div>
                     </Link>
                 </Item>
-                <Item onClick={() => onSelect('chat')} className={selected === "chat" ? "item selected" : "item"}>
-                    <Link to="/app/chat" className={"navbar-link"}>
-                        <img src={chat_white} width="45" height="45" alt="chat"/>
-                        <div className="section-name">Mensajes</div>
+                <Item onClick={() => onSelect('perfil', selected_user)} className={selected === "perfil" ? "item selected" : "item"}>
+                    <Link to="/app/profile" className={"navbar-link"}>
+                        <img src={profile_white} width="45" height="45" alt="chat"/>
+                        <div className="section-name">Perfil</div>
                     </Link>
                 </Item>
-                <Item onClick={() => logOut()} className={selected === "opciones" ? "item selected" : "item"}>
+                <Item onClick={() => logOut()} className={selected === "logout" ? "item selected" : "item"}>
                     <Link to="/" className={"navbar-link"}>
-                        <img src={opciones_white} width="45" height="45" alt="opciones"/>
-                        <div className="section-name">Opciones</div>
+                        <img src={opciones_white} width="45" height="45" alt="logout"/>
+                        <div className="section-name">Log Out</div>
                     </Link>
                 </Item>
             </List>
@@ -73,10 +74,14 @@ const Links = ({ selected, onSelect, logOut }) => (
 export default connect(
     state => ({
         selected: selectors.getSelectedSection(state),
+        selected_user: selectors.getSelectedUser(state)
     }),
     dispatch => ({
-        onSelect(selected){
+        onSelect(selected, id = null){
             dispatch(actions.changeSection(selected))
+            if(selected === 'perfil'){
+                dispatch(userActions.seeUser(id))
+            } 
         },
         logOut(){
             dispatch(authActions.logOut())

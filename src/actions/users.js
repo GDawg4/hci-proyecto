@@ -28,6 +28,13 @@ export const selectUser = id => ({
     }
 });
 
+export const seeUser = id => ({
+    type: types.USER_SEEN,
+    payload: {
+        id
+    }
+})
+
 export const searchUser = parameter =>({
     type:types.USER_SEARCHED,
     payload:{
