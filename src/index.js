@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 
 import configureStore from './configureStore';
 import Root from './components/Root';
-// import * as postActions from './actions/posts';
+import * as postActions from './actions/posts';
 // import * as userActions from './actions/users';
 // import * as selectors from './reducers';
 // import * as songsActions from './actions/songs';
@@ -48,7 +48,7 @@ store.dispatch(postActions.publishPost("José López", "josesito12", 15, "Acabo 
 store.dispatch(postActions.publishPost("Christian Molina", "chrismolina", 38, "Mi canción favorita para despertar.", '', 476676002))
 store.dispatch(postActions.publishPost("María Ximena", "xime222", 10, "La mejor canción del nuevo álbum de Bad Bunny. La mejor canción del nuevo álbum de Bad Bunny. La mejor canción del nuevo álbum de Bad Bunny. La mejor canción del nuevo álbum de Bad Bunny.", '', 476676002))
 store.dispatch(postActions.publishPost("Juan Donis", "juandonissss", 22, "Colores!", '', 476676002))
-store.dispatch(postActions.publishPost("Pedro Martínez", "martinezpedro", 7, "Dark Lane Demo Tapes es puro fuego!", '', 476676002))*/
+store.dispatch(postActions.publishPost("Pedro Martínez", "martinezpedro", 7, "Dark Lane Demo Tapes es puro fuego!", '', 476676002))
 
 /*store.dispatch(postActions.publishPost('Uncle Sam', 'pepetrueno123', 0, 'plz work'))*/
 
