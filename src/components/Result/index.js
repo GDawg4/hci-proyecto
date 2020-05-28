@@ -4,8 +4,11 @@ import { connect } from 'react-redux';
 // import { selectSong } from "../../actions/songs";
 
 import './styles.css';
+import * as selectors from '../../reducers'
 import * as songActions from '../../actions/songs';
+import * as userActions from '../../actions/users'
 import play_icon from '../../resources/play-icon-orange.svg';
+import logoOrange from '../../resources/Turntable_final_Turntable isotipo naranja.svg'
 
 function fancyTimeFormat(time)
 {   
@@ -26,7 +29,7 @@ function fancyTimeFormat(time)
     return ret;
 }
 
-const Result = ({ /*songID,*/ title, artist, coverSource, duration, selectSong, album }) =>(
+const Result = ({ songID, title, artist, coverSource, duration, selectSong, album, currentUser, saveSong }) =>(
     <div className='result-wrapper' onClick={selectSong}>
         <img className="result-image" alt="result" src={ coverSource } width={'75'} />
         <div className = 'result-info'>
@@ -38,7 +41,8 @@ const Result = ({ /*songID,*/ title, artist, coverSource, duration, selectSong, 
             </div>
         </div>
         <div className='result-rest'>
-            <img className='play-btn' alt="play" onClick={selectSong} src={play_icon} height={50} width={50}/>
+            <img className='play-btn' alt="play" onClick={selectSong} src={play_icon} height={30} width={30}/>
+            <img className='play-btn' alt="play" onClick={() => saveSong(currentUser, songID)} src={logoOrange} height={30} width={30}/>
             <div className='result-duration'>{fancyTimeFormat(duration)}</div>
         </div>
     </div>
@@ -47,10 +51,15 @@ const Result = ({ /*songID,*/ title, artist, coverSource, duration, selectSong, 
 
 
 export default connect(
-    undefined,
+    (state)=>({
+        currentUser:selectors.getSelectedUser(state)
+    }),
     (dispatch, { songID/*, title*/ })=> ({
         selectSong(){
             dispatch(songActions.selectSong(songID))
+        },
+        saveSong(user, song){
+            dispatch(userActions.saveSong(user, song))
         }
     })
 )(Result)

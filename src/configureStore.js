@@ -21,7 +21,7 @@ const configureStore = () => {
     const store = createStore(
         rootReducer,
         persistedState,
-        devToolsEnhancer()
+        devToolsEnhancer({trace:true})
     );
 
     store.subscribe(throttle(() => {

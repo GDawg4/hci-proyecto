@@ -21,7 +21,7 @@ const apiCall = (type, searchTerm) =>{
     const getIDWithInfo = `https://api.deezer.com/${type}/${searchTerm}`;
     const corsURLID = `https://cors-anywhere.herokuapp.com/${getIDWithInfo}`;
     const axios = require('axios').default;
-    return axios.get(corsURLID)
+    return axios.get(getIDWithInfo)
 }
 
 
@@ -78,8 +78,9 @@ const Biblioteca = ({ posts, songs, songsWithInfo, songsConverted, findAllSongs 
                 <div className="bib-content-container">
                     { selectedTab === 0 ?
                         songsConverted.length > 0 ?
-                            songsConverted.map(song => <Song title={song[0].title} artis={song[0].artist} album={song[0].album} cover={song[0].cover} id={song[0].id} />):
-                            <div className="posts-error-message">Nel</div> :
+                            songsConverted.map(song => song.length !== 0 ? <Song title={song[0].title} artist={song[0].artist} album={song[0].album} cover={song[0].cover} songID={song[0].songID} />:
+                                <Song title={song.title} artist={song.artist} album={song.album} cover={song.cover} songID={song.songID} />):
+                            <div className="posts-error-message">Agrega más canciones</div> :
                         posts.length > 0 ? reverse(posts).map(post =>
                             <Post key={post.id} source={post.source} index={post.id} height={height(post.content)} {...post}/>) :
                             <div className="posts-error-message">No has dado like a ningun post</div>
@@ -110,6 +111,7 @@ export default connect(
         findAllSongs(){
             stateProps.songs.map(song =>apiCall('track', song)
                 .then(function (response) {
+                    console.log(response.data)
                     dispatchProps.findSong(response.data.id, response.data.title, response.data.artist.name, response.data.duration, response.data.album.cover_medium ,response.data.album.title)
                     /*response.data.map(
                         song =>dispatchProps.findSong(song.id, song.title, song.artist.name, song.duration, song.album.cover_medium, song.album.title)
