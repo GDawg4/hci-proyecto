@@ -36,13 +36,12 @@ store.dispatch(userActions.createUser("Doug", "Las", "doug456", "doug@gmail.com"
 store.dispatch(userActions.createUser('Turn', "Table", "TTFire", "fire@gmail.com", "tttfirettt"))
 store.dispatch(userActions.createUser('Kendrick', "Duckworth", "kdotking", "duckworth@gmail.com", "humblegtall"))
 
-store.dispatch(postActions.publishPost("José López", "josesito12", 15, "Acabo de descubrir esta canción y me encantó!"))
-store.dispatch(postActions.publishPost("Christian Molina", "chrismolina", 38, "Mi canción favorita para despertar."))
-store.dispatch(postActions.publishPost("María Ximena", "xime222", 10, "La mejor canción del nuevo álbum de Bad Bunny. La mejor canción del nuevo álbum de Bad Bunny. La mejor canción del nuevo álbum de Bad Bunny. La mejor canción del nuevo álbum de Bad Bunny."))
-store.dispatch(postActions.publishPost("Juan Donis", "juandonissss", 22, "Colores!"))
-store.dispatch(postActions.publishPost("Pedro Martínez", "martinezpedro", 7, "Dark Lane Demo Tapes es puro fuego!"))*/
+store.dispatch(postActions.publishPost("José López", "josesito12", 15, "Acabo de descubrir esta canción y me encantó!", '', 476676002))
+store.dispatch(postActions.publishPost("Christian Molina", "chrismolina", 38, "Mi canción favorita para despertar.", '', 476676002))
+store.dispatch(postActions.publishPost("María Ximena", "xime222", 10, "La mejor canción del nuevo álbum de Bad Bunny. La mejor canción del nuevo álbum de Bad Bunny. La mejor canción del nuevo álbum de Bad Bunny. La mejor canción del nuevo álbum de Bad Bunny.", '', 476676002))
+store.dispatch(postActions.publishPost("Juan Donis", "juandonissss", 22, "Colores!", '', 476676002))
+store.dispatch(postActions.publishPost("Pedro Martínez", "martinezpedro", 7, "Dark Lane Demo Tapes es puro fuego!", '', 476676002))*/
 
-/*
-store.dispatch(postActions.publishPost('Uncle Sam', 'pepetrueno123', 0, 'plz work'))*/
+/*store.dispatch(postActions.publishPost('Uncle Sam', 'pepetrueno123', 0, 'plz work'))*/
 
 ReactDOM.render(<Root store={store}/>, document.getElementById('root'));

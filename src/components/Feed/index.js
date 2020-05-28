@@ -20,7 +20,7 @@ const Feed = ({ posts, selectedUser, text, songInfo, currentUser, allFollowing})
         <div className="feed-container">
             <NewPost selectedUser = {selectedUser} text = {text} songInfo = {songInfo}/>
             {posts.length > 0 ? reverse(posts).filter(post => includes(allFollowing, post.username)).map(post =>
-                <Post key={post.id} source={post.source} index={post.id} height={height(post.content)} {...post}/>
+                <Post key={post.id} source={post.source} index={post.id} height={height(post.content)} songID = {post.songID} {...post}/>
             ) : <div className="default-message">NO HAY POSTS</div>}
         </div>
         {/* <MusicPlayer/> */}

@@ -78,6 +78,8 @@ export const getAllFollowing = (state) => selectors.getAllFollowing(state.reduce
 export const getIsFollowing = (state) => selectors.getIsFollowing(state.reducer);
 export const getSeenUser = (state) => selectors.getSeenUser(state.reducer);
 export const getUsers = state => selectors.getUsers(state.reducer.users);
+export const getSongsSaved = (state) =>selectors.getSongsSaved(state.reducer, getSelectedUser(state))
+
 export const getSomething = state => state;
 export const getSearchedParameter = state => selectors.getSearchParameter(state.reducer.users)
 export const getAuth = state => state.reducer.auth;

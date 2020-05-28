@@ -1,10 +1,12 @@
 import default_image from "../../resources/default.svg";
 import React from "react";
 import * as postActions from '../../actions/posts'
+import {connect} from 'react-redux'
 import { Field, reduxForm, reset } from 'redux-form'
 import isNil from 'lodash/isNil'
 
 import './styles.css';
+import * as selectors from '../../reducers'
 
 const NewPost = ({ handleSubmit }) => {
     return (
@@ -25,7 +27,12 @@ const NewPost = ({ handleSubmit }) => {
 }
 
 const submit = (state, dispatch, { selectedUser, text, songInfo }) => {
-    isNil(text.values) ? console.log('This is nothing ', text.values) : dispatch(postActions.publishPost(`${selectedUser.name} ${selectedUser.lastName}`, selectedUser.username, 0, text.values.newPostText, 'songInfo.cover'))
+    (isNil(text.values) || isNil(songInfo)) ?
+        console.log('This is nothing ', text.values) :
+        dispatch(postActions.publishPost(
+            `${selectedUser.name} ${selectedUser.lastName}`, selectedUser.username, 0,
+            text.values.newPostText, songInfo.cover, songInfo.songID))
+    console.log(songInfo)
     dispatch(reset('newPost'))
 }
 

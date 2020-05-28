@@ -24,6 +24,8 @@
 .song {
     border-radius: 0 24px 24px 0;
     width: 312px;
+    height: fit-content;
+    object-fit: cover;
 }
 
 .post-data-container {
@@ -79,6 +81,8 @@
 .heart {
     margin-bottom: 8px;
 }
+
+
 
 .likes {
     padding-left: 8px;

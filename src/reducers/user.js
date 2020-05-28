@@ -76,6 +76,37 @@ const searchedUser = (state = null, action) => {
     }
 }
 
+const songsSaved = (state = {}, action) => {
+    switch (action.type) {
+        case types.USER_CREATED: {
+            return {
+                ...state,
+                [action.payload.id]: []
+            };
+        }
+        case types.USER_SONG_SAVED:{
+            console.log(state)
+            console.log(action.payload.currentUser)
+            console.log(state[action.payload.currentUser])
+            const newState = [...state[action.payload.currentUser], action.payload.songID]
+            return {
+                ...state,
+                [action.payload.currentUser]:newState
+            }
+        }
+        case types.USER_SONG_UNSAVED:{
+            const newState = filter(state[action.payload.currentUser], value => value !== action.payload.songID)
+            return {
+                ...state,
+                [action.payload.currentUser]:newState
+            }
+        }
+        default:{
+            return state
+        }
+    }
+}
+
 const following = (state = {}, action) => {
     switch (action.type) {
         case types.USER_CREATED: {
@@ -105,12 +136,13 @@ const following = (state = {}, action) => {
 }
 
 export default combineReducers({
-    selectedUser,
     userById,
     userByOrder,
     searchedUser,
+    selectedUser,
+    seenUser,
     following,
-    seenUser
+    songsSaved
 })
 
 
@@ -121,3 +153,4 @@ export const getUsers = state => state.userByOrder.map(id => getUserById(state, 
 export const getSearchParameter = state => state.searchedUser;
 export const getAllFollowing = (state, currentUser) => state.users.following[currentUser];
 export const getIsFollowing = (state) => includes(getAllFollowing(state, getSelectedUser(state)), getSeenUser(state));
+export const getSongsSaved = (state, currentUser) => state.users.songsSaved;

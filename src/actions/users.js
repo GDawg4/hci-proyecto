@@ -55,3 +55,18 @@ export const unfollowUser = (currentUser, targetUser) =>({
         targetUser
     }
 })
+
+export const saveSong = (currentUser, songID) =>({
+    type: types.USER_SONG_SAVED,
+    payload:{
+        currentUser,
+        songID
+    }
+})
+export const unSaveSong = (currentUser, songID) =>({
+    type: types.USER_SONG_UNSAVED,
+    payload:{
+        currentUser,
+        songID
+    }
+})

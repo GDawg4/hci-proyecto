@@ -1,35 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="41616330-b126-4d85-8ca3-58a18ba2abb4" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/actions/friends.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/actions/messages.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/actions/playlists.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/actions/posts.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/actions/songs.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/reducers/friends.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/reducers/messages.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/reducers/playlists.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/reducers/posts.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/reducers/songs.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/store.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/types/friends.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/types/messages.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/types/playlists.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/types/posts.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/types/songs.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
+    <list default="true" id="41616330-b126-4d85-8ca3-58a18ba2abb4" name="Default Changelist" comment="QoL">
+      <change afterPath="$PROJECT_DIR$/src/resources/Turntable_final_Turntable isotipo naranja.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/resources/Turntable_final_Turntable isotipo negro.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/resources/Turntable_final_Turntable logotipo naranja.svg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.test.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/actions/posts.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/actions/posts.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/actions/users.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/actions/users.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Feed/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Feed/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/NewPost/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/NewPost/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Post/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Post/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Post/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Post/styles.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/logo.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/serviceWorker.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/setupTests.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/reducers/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/reducers/songs.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers/songs.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/reducers/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers/user.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/types/users.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/types/users.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,6 +44,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/resources" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -65,6 +53,11 @@
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_interpreter_path" value="C:/Program Files/nodejs/node" />
     <property name="nodejs_package_manager_path" value="yarn" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Rodrigo Garoz\WebstormProjects\hci-proyecto\src\resources" />
+    </key>
   </component>
   <component name="RunManager" selected="npm.npm start">
     <configuration name="Debug Application" type="JavascriptDebugType" uri="http://localhost:3000">
@@ -112,11 +105,49 @@
       <workItem from="1586799775536" duration="14000" />
       <workItem from="1586805025991" duration="958000" />
       <workItem from="1587867738503" duration="10051000" />
+      <workItem from="1590168798372" duration="3997000" />
+      <workItem from="1590278591969" duration="3248000" />
+      <workItem from="1590521052421" duration="175000" />
+      <workItem from="1590620509278" duration="58000" />
+      <workItem from="1590641184234" duration="8778000" />
     </task>
+    <task id="LOCAL-00001" summary="Added unfollow functionality">
+      <created>1590080082663</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1590080082663</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Added own profile">
+      <created>1590081071691</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1590081071691</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Added unfollow functionality" />
+    <MESSAGE value="Added own profile" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added own profile" />
   </component>
   <component name="WindowStateProjectService">
     <state x="223" y="88" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1587869783570">
@@ -127,6 +158,14 @@
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="499" y="180" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.864/1920.0.1920.1080@0.0.1536.864" timestamp="1587870228748" />
+    <state x="391" y="0" key="CommitChangelistDialog2" timestamp="1590650116758">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="391" y="0" key="CommitChangelistDialog2/0.0.1536.864/1920.0.1920.1080@0.0.1536.864" timestamp="1590650116758" />
+    <state x="147" y="74" key="DiffContextDialog" timestamp="1590641623731">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="147" y="74" key="DiffContextDialog/0.0.1536.864/1920.0.1920.1080@0.0.1536.864" timestamp="1590641623731" />
     <state x="549" y="175" key="FileChooserDialogImpl" timestamp="1585675691511">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
@@ -135,5 +174,21 @@
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="640" y="327" width="258" height="210" key="Github.ShareDialog/0.0.1536.864/1920.0.1920.1080@0.0.1536.864" timestamp="1585675949889" />
+    <state x="361" y="162" key="Vcs.Push.Dialog.v2" timestamp="1590081077014">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="361" y="162" key="Vcs.Push.Dialog.v2/0.0.1536.864/1920.0.1920.1080@0.0.1536.864" timestamp="1590081077014" />
+    <state x="2566" y="256" width="627" height="568" key="find.popup" timestamp="1590620514809">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state x="2566" y="256" width="627" height="568" key="find.popup/0.0.1536.864/1920.0.1920.1080@1920.0.1920.1080" timestamp="1590620514809" />
+    <state x="497" y="207" key="git4idea.merge.GitPullDialog" timestamp="1590641611706">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="497" y="207" key="git4idea.merge.GitPullDialog/0.0.1536.864/1920.0.1920.1080@0.0.1536.864" timestamp="1590641611706" />
+    <state x="2536" y="250" key="run.anything.popup" timestamp="1590278601562">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state x="2536" y="250" key="run.anything.popup/0.0.1536.864/1920.0.1920.1080@1920.0.1920.1080" timestamp="1590278601562" />
   </component>
 </project>
