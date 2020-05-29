@@ -2,6 +2,7 @@ import React from "react";
 import { connect } from 'react-redux';
 
 import includes from "lodash/includes";
+import last from 'lodash/last'
 
 import './styles.css';
 import * as selectors from '../../reducers'
@@ -11,12 +12,14 @@ import user from "../../reducers/user";
 import { followUser } from "../../actions/users";
 import { logOut } from "../../actions/auth";
 import { unfollowUser } from "../../actions/users";
+import filter from "lodash/filter";
 
-const ProfileHeader = ({seenUser, follow, isFollowing, unfollow, isSelf}) => (
+const ProfileHeader = ({seenUser, follow, isFollowing, unfollow, isSelf, songsConverted, test}) => (
     <div>
         <div className='profile-header new-post'>
             <img alt="default-user" className='new-post-user' src={default_image}/>
             <div className='user-header'>{`${seenUser.name} ${seenUser.lastName}`}</div>
+            {songsConverted.length === 0 || last(songsConverted).length === 0 ? <p>Este usuario no ha guardado canciones</p>:<p>{last(songsConverted)[0].title}</p>}
             {!isSelf? isFollowing  ? <button className='follow-button' onClick={unfollow}>No seguir</button> :
                 <button className='follow-button' onClick={follow}>Seguir</button>:<button className='follow-button'>Tu mismo</button>}
         </div>
@@ -30,7 +33,8 @@ export default connect(
         selected_user: selectors.getSelectedUser(state),
         currentUser: (selectors.getSelectedUser(state, selectors.getSeenUser(state))) ? selectors.getUserById(state, selectors.getSelectedUser(state)) : 'nel',
         //allFollowing:selectors.getAllFollowing(state),
-        transformedAllFollowing: selectors.getAllFollowing(state) === undefined ? null : selectors.getAllFollowing(state).map(user => selectors.getUserById(state, user).username)
+        transformedAllFollowing: selectors.getAllFollowing(state) === undefined ? null : selectors.getAllFollowing(state).map(user => selectors.getUserById(state, user).username),
+        songsConverted: selectors.getSongsSaved(state)[selectors.getSeenUser(state)].map(song => filter(selectors.getAllSongs(state), songInfo => songInfo.songID === song))
     }),
     (dispatch) => ({
         follow(currentUser, targetUser){
@@ -44,6 +48,7 @@ export default connect(
         seenUser:stateProps.seenUser,
         currentUser:stateProps.currentUser,
         isSelf: stateProps.seenUser === stateProps.currentUser,
+        songsConverted:stateProps.songsConverted,
         follow(){
             !includes(stateProps.transformedAllFollowing, stateProps.seenUser.username) ? dispatchProps.follow(stateProps.currentUser.id, stateProps.seenUser.id) : console.log('already')
         },

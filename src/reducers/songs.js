@@ -1,5 +1,7 @@
-import * as types from '../types/songs'
 import { combineReducers } from "redux";
+import uniq from 'lodash/uniq'
+
+import * as types from '../types/songs'
 // import { getPostById } from "./posts";
 
 const byId = (state = {}, action)=>{
@@ -23,7 +25,7 @@ const byId = (state = {}, action)=>{
 const order = (state=[], action)=>{
     switch (action.type) {
         case types.SONG_FOUND:{
-            return [...state, action.payload.songID]
+            return uniq([...state, action.payload.songID])
         }
         case types.SONG_CLEARED:{
             return []

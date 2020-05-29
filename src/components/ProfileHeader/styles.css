@@ -4,7 +4,7 @@
     color: white;
     border-radius: 0.5rem;
     border-style: none;
-    margin-left: 35rem;
+    margin-left: 25rem;
     margin-top: 0rem;
 }
 
@@ -30,4 +30,8 @@
     flex: 3;
     display: inline;
     vertical-align: middle;
+}
+
+.header-song{
+    padding-left: 2rem;
 }
