@@ -15,6 +15,12 @@ import biblioteca_white from '../../resources/biblioteca-white.svg';
 import profile_white from '../../resources/profile.svg';
 import opciones_white from '../../resources/opciones-white.svg';
 
+import inicio_orange from '../../resources/inicio-orange.svg';
+import top_orange from '../../resources/top-orange.svg';
+import biblioteca_orange from '../../resources/biblioteca-orange.svg';
+import profile_orange from '../../resources/profile.svg';
+import opciones_orange from '../../resources/opciones-orange.svg';
+
 
 const Collapse = styled.div.attrs({
     className: 'collpase navbar-collapse',
@@ -36,34 +42,34 @@ const Links = ({ selected, onSelect, logOut, selected_user }) => (
     <Fragment>
         <Collapse>
             <List>
-                <Item onClick={() => onSelect('feed')} className={selected === "feed" ? "first-item item selected" : "first-item item"}>
+                <Item onClick={() => onSelect('feed')} className={selected === "feed" ? "first-item item" : "first-item item"}>
                     <Link to="/app/feed" className={"navbar-link"}>
-                        <img src={inicio_white} width="45" height="45" alt="home"/>
-                        <div className="section-name">Inicio</div>
+                        <img src={selected === "feed" ? inicio_orange : inicio_white} width="45" height="45" alt="home"/>
+                        <div className={selected === "feed" ? "section-name text-color" : "section-name"}>Inicio</div>
                     </Link>
                 </Item>    
-                <Item onClick={() => onSelect('top')} className={selected === "top" ? "item selected" : "item"}>
+                <Item onClick={() => onSelect('top')} className={selected === "top" ? "item " : "item"}>
                     <Link to="/app/top" className={"navbar-link"}>
-                        <img src={top_white} width="45" height="45" alt="top"/>
-                        <div className="section-name">Top</div>
+                        <img src={selected === "top" ? top_orange : top_white} width="45" height="45" alt="top"/>
+                        <div className={selected === "top" ? "section-name text-color" : "section-name"}>Top</div>
                     </Link>
                 </Item>
-                <Item onClick={() => onSelect('biblioteca')} className={selected === "biblioteca" ? "item selected" : "item"}>
+                <Item onClick={() => onSelect('biblioteca')} className={selected === "biblioteca" ? "item " : "item"}>
                     <Link to="/app/biblioteca" className={"navbar-link"}>
-                        <img src={biblioteca_white} width="45" height="45" alt="biblioteca"/>   
-                        <div className="section-name">Biblioteca</div>
+                        <img src={selected === "biblioteca" ? biblioteca_orange : biblioteca_white} width="45" height="45" alt="biblioteca"/>
+                        <div className={selected === "biblioteca" ? "section-name text-color" : "section-name"}>Biblioteca</div>
                     </Link>
                 </Item>
-                <Item onClick={() => onSelect('perfil', selected_user)} className={selected === "perfil" ? "item selected" : "item"}>
+                <Item onClick={() => onSelect('perfil', selected_user)} className={selected === "perfil" ? "item " : "item"}>
                     <Link to="/app/profile" className={"navbar-link"}>
                         <img src={profile_white} width="45" height="45" alt="chat"/>
-                        <div className="section-name">Perfil</div>
+                        <div className={selected === "perfil" ? "section-name text-color" : "section-name"}>Perfil</div>
                     </Link>
                 </Item>
-                <Item onClick={() => logOut()} className={selected === "logout" ? "item selected" : "item"}>
+                <Item onClick={() => logOut()} className={selected === "logout" ? "item " : "item"}>
                     <Link to="/" className={"navbar-link"}>
-                        <img src={opciones_white} width="45" height="45" alt="logout"/>
-                        <div className="section-name">Log Out</div>
+                        <img src={selected === "logout" ? opciones_orange : opciones_white} width="45" height="45" alt="logout"/>
+                        <div className={selected === "logout" ? "section-name text-color" : "section-name"}>Log Out</div>
                     </Link>
                 </Item>
             </List>
