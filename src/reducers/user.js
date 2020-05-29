@@ -154,3 +154,5 @@ export const getSearchParameter = state => state.searchedUser;
 export const getAllFollowing = (state, currentUser) => state.users.following[currentUser];
 export const getIsFollowing = (state) => includes(getAllFollowing(state, getSelectedUser(state)), getSeenUser(state));
 export const getSongsSaved = (state, currentUser) => state.users.songsSaved;
+export const getFollow = (state) => state.users.following
+export const getFollowArray = state => state.users.userByOrder.map(id => getAllFollowing(state, id))
