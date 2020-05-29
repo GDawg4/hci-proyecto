@@ -6,7 +6,7 @@ import './styles.css'
 import * as selectors from '../../reducers'
 import * as actions from "../../actions/users";
 
-const DummyPeopleForm = ({handleSubmit}) => (
+const PeopleForm = ({handleSubmit}) => (
     <div className='people-form-wrapper'>
         <form onSubmit={handleSubmit}>
             <div className="people-form">
@@ -25,11 +25,11 @@ const submit = (state, dispatch, {allForms}) => {
     }
 }
 
-const Index = reduxForm({
+const PeopleFormWrapped = reduxForm({
     form: 'searchPeople',
     onSubmit:submit
-})(DummyPeopleForm);
+})(PeopleForm);
 
-export default Index
+export default PeopleFormWrapped
 
 

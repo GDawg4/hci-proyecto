@@ -15,23 +15,9 @@ import {createMuiTheme, makeStyles, ThemeProvider} from "@material-ui/core/style
 import Paper from "@material-ui/core/Paper";
 import reverse from "lodash/reverse";
 import Post from "../Post";
-import Index from "../PeopleForm";
+import PeopleForm from "../PeopleForm";
 import {Link} from "react-router-dom";
-
-// const type = 'tracks';
-// const id = '457602422';
-// const searchTerm = 'Kendrick Lamar';
-// const getInfoWithID = `https://api.deezer.com/${type}/${id}`;
-// const getIDWithInfo = `https://api.deezer.com/search/${type}/?q=${searchTerm}&index=0&limit=1&output=json`;
-// const url = `https://www.deezer.com/plugins/player?format=classic&autoplay=true&playlist=true&width=432&height=350&color=F59320&layout=dark&size=medium&type=${type}&id=${id}&app_id=1`;
-/*const corsURLID = `https://cors-anywhere.herokuapp.com/${getInfoWithID}`;
-const corsURLInfo = `https://cors-anywhere.herokuapp.com/${getIDWithInfo}`;
-const axios = require('axios').default;*/
-/*axios.get(corsURLInfo).then(function (response) {
-    console.log(response.data.data[0].id)
-});*/
-
-
+import People from "../People";
 
 const height = content => {
     const result = Math.ceil(content.length/64) * 27 + 148;
@@ -85,7 +71,7 @@ const MusicPlayer = ({ allForms, songs, currentlySelected, isEmpty = true, isAct
                         <SearchResults songs={songs} isEmpty={isEmpty} isActive={isActive}/>
                     </div> :
                     <div>
-                        <Index allForms={peopleForms}/>
+                        <PeopleForm allForms={peopleForms}/>
                         {lookedUp ? <PeopleResults/>:<p>Busca a un usuario</p>}
                     </div>
                 }

@@ -1,9 +1,10 @@
 import React from "react";
 import People from "../People";
+import includes from 'lodash/includes'
+import lowercase from 'lodash/lowerCase'
+
 import { connect } from 'react-redux';
 import * as selectors from '../../reducers';
-
-
 import './styles.css';
 
 const PeopleResults = ({ users, isEmpty, isActive }) => (
@@ -17,7 +18,7 @@ const PeopleResults = ({ users, isEmpty, isActive }) => (
 
 export default connect(
     (state) =>({
-        users: selectors.getUsers(state).filter(user => user.id !== selectors.getSelectedUser(state))
+        users: selectors.getUsers(state).filter(user => user.id !== selectors.getSelectedUser(state) && (includes(lowercase(user.name), lowercase(selectors.getSearchedParameter(state))) || includes(lowercase(user.username), lowercase(selectors.getSearchedParameter(state)))))
     }),
     undefined
 )(PeopleResults);
