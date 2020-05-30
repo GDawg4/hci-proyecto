@@ -11,7 +11,7 @@ import includes from 'lodash/includes'
 
 
 const height = content => {
-    const result = Math.ceil(content.length/64) * 27 + 148;
+    const result = Math.ceil(content.length/50) * 27 + 148;
     return result;
 }
 
@@ -21,9 +21,8 @@ const Feed = ({ posts, selectedUser, text, songInfo, currentUser, allFollowing }
             <NewPost selectedUser = {selectedUser} text = {text} songInfo = {songInfo}/>
             {posts.length > 0 ? reverse(posts).filter(post => includes(allFollowing, post.username)).map(post =>
                 <Post key={post.id} source={post.source} index={post.id} height={height(post.content)} songID = {post.songID} {...post}/>
-            ) : <div className="default-message">NO HAY POSTS</div>}
+            ) : <div className="posts-default-message">Parece que no estas siguiendo a nadie aún...</div>}
         </div>
-        {/* <MusicPlayer/> */}
     </div>
 )
 

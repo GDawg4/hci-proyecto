@@ -2,8 +2,7 @@ import React from "react";
 import { Field } from 'redux-form';
 import { reduxForm } from 'redux-form';
 
-import './styles.css'
-import * as selectors from '../../reducers'
+import './styles.css';
 import * as actions from "../../actions/users";
 
 const PeopleForm = ({handleSubmit}) => (

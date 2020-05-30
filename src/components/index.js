@@ -5,9 +5,8 @@ import Feed from './Feed';
 import Login from './Login';
 import Top from './Top';
 import Biblioteca from './Biblioteca';
-import Chat from './Chat';
 import Opciones from './Opciones';
 import Registro from './Registro';
 import Logout from './Logout'
 
-export { Links, Logo, NavBar, Feed, Login, Top, Biblioteca, Chat, Opciones, Registro, Logout };
+export { Links, Logo, NavBar, Feed, Login, Top, Biblioteca, Opciones, Registro, Logout };

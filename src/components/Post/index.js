@@ -1,23 +1,23 @@
 import React from 'react';
-import {connect} from "react-redux";
+import { connect } from "react-redux";
+import { Link } from "react-router-dom";
 import includes from 'lodash/includes';
 
 import './styles.css';
 import * as selectors from '../../reducers';
 import * as actions from '../../actions/posts';
-import * as userActions from '../../actions/users'
+import * as userActions from '../../actions/users';
+import * as songActions from '../../actions/songs';
 
 import default_image from '../../resources/default.svg';
 import heart from '../../resources/heart.svg';
 import heart_o from '../../resources/heartOrange.png';
-import picture1 from '../../resources/logoLetras.svg';
 
 import logoO from '../../resources/Turntable_final_Turntable isotipo naranja.svg';
 import logoB from '../../resources/Turntable_final_Turntable isotipo negro.svg';
-import {Link} from "react-router-dom";
-import user from "../../reducers/user";
 
-const Post = ({ user, content, likes, username, userLikes, userid, height, like, source, save, unSave, songsSaved, songID }) => (
+
+const Post = ({ user, content, likes, username, userLikes, userid, height, like, source, save, unSave, songsSaved, songID, selectSong }) => (
     <li className="post-list-item">
         <div className="post-container">
             <div className="post-info-container">
@@ -46,7 +46,7 @@ const Post = ({ user, content, likes, username, userLikes, userid, height, like,
                     {/*<img src={logoO} className="heart" width="28" height="28" alt="save" onClick={() => save(songsSaved)}/>*/}
                 </div>
             </div>
-            <img src={source} className="song" height={height} alt="song"/>
+            <img  onClick={() => selectSong(songID)} src={source} className="song" style={{maxHeight: height}} alt="song"/>
         </div>
     </li>
 );
@@ -66,6 +66,9 @@ export default connect(
         },
         unSave(userid){
             dispatch(userActions.unSaveSong(userid, songID))
+        },
+        selectSong(id){
+            dispatch(songActions.selectSong(id))
         }
     })
 )(Post)

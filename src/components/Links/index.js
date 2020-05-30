@@ -13,13 +13,12 @@ import inicio_white from '../../resources/inicio-white.svg';
 import top_white from '../../resources/top-white.svg';
 import biblioteca_white from '../../resources/biblioteca-white.svg';
 import profile_white from '../../resources/profile.svg';
-import opciones_white from '../../resources/opciones-white.svg';
+import logout from '../../resources/logout.svg';
 
 import inicio_orange from '../../resources/inicio-orange.svg';
 import top_orange from '../../resources/top-orange.svg';
 import biblioteca_orange from '../../resources/biblioteca-orange.svg';
-import profile_orange from '../../resources/profile.svg';
-import opciones_orange from '../../resources/opciones-orange.svg';
+import profile_orange from '../../resources/profile-orange.svg';
 
 
 const Collapse = styled.div.attrs({
@@ -62,13 +61,13 @@ const Links = ({ selected, onSelect, logOut, selected_user }) => (
                 </Item>
                 <Item onClick={() => onSelect('perfil', selected_user)} className={selected === "perfil" ? "item " : "item"}>
                     <Link to="/app/profile" className={"navbar-link"}>
-                        <img src={profile_white} width="45" height="45" alt="chat"/>
+                        <img src={selected === "perfil" ? profile_orange : profile_white} width="45" height="45" alt="chat"/>
                         <div className={selected === "perfil" ? "section-name text-color" : "section-name"}>Perfil</div>
                     </Link>
                 </Item>
                 <Item onClick={() => logOut()} className={selected === "logout" ? "item " : "item"}>
                     <Link to="/" className={"navbar-link"}>
-                        <img src={selected === "logout" ? opciones_orange : opciones_white} width="45" height="45" alt="logout"/>
+                        <img src={logout} width="45" height="45" alt="logout"/>
                         <div className={selected === "logout" ? "section-name text-color" : "section-name"}>Log Out</div>
                     </Link>
                 </Item>

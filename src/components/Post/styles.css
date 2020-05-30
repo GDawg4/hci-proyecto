@@ -24,8 +24,7 @@
 .song {
     border-radius: 0 24px 24px 0;
     width: 312px;
-    height: fit-content;
-    object-fit: cover;
+    object-fit: fill;
 }
 
 .post-data-container {

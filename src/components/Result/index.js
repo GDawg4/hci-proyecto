@@ -30,7 +30,7 @@ function fancyTimeFormat(time)
 }
 
 const Result = ({ songID, title, artist, coverSource, duration, selectSong, album, currentUser, saveSong }) =>(
-    <div className='result-wrapper' onClick={selectSong}>
+    <div className='result-wrapper'>
         <img className="result-image" alt="result" src={ coverSource } width={'75'} />
         <div className = 'result-info'>
             <div className = 'result-title'>

@@ -1,6 +1,5 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import slice from 'lodash/slice'
 
 import './styles.css';
 import PlaylistCard from '../PlaylistCard';

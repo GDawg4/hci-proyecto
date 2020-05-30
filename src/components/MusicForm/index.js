@@ -2,13 +2,9 @@ import React from 'react';
 import { Field } from 'redux-form';
 import { reduxForm } from 'redux-form';
 
-import isNil from "lodash/isNil";
-
 import './styles.css';
 import * as songActions from '../../actions/songs';
-// import * as selectors from '../../reducers';
-// import * as postActions from "../../actions/posts";
-// import play_icon from '../../resources/play-icon.svg';
+
 
 const apiCall = (type, searchTerm) =>{
     const getIDWithInfo = `https://api.deezer.com/search/${type}/?q=${searchTerm}`;

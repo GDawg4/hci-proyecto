@@ -13,9 +13,10 @@ import logotipo from '../../resources/logotipo.svg';
 const Login = ({ users, onAuth, isAuth }) => {
     const [username, changeUsername] = useState('');
     const [password, changePassword] = useState('');
+    console.log("IS AUTH: ", isAuth)
 
     return(
-        isAuth ? <Redirect to="/app/feed"/> : 
+        isAuth === 'COMPLETED' ? <Redirect to="/app/feed"/> : 
         <div className="login-container">
             <img src={welcome} className="welcome" alt="welcome-pic" />
             <div className="login-content">

@@ -1,3 +1,11 @@
 .profile-wrapper{
     margin-left: 20rem;
 }
+
+.no-posts-message {
+    color: #19223F;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 2rem;
+    padding-top: 10%;
+    padding-left: 18%;
+}

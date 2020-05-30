@@ -5,7 +5,6 @@ import './styles.css';
 import * as selectors from '../../reducers'
 import * as userActions from '../../actions/users'
 import * as songActions from '../../actions/songs';
-import {selectSong} from "../../actions/songs";
 
 
 const Song = ({ title, artist, album, cover, select, deSelect, currentUser, songID }) => (
@@ -21,10 +20,10 @@ const Song = ({ title, artist, album, cover, select, deSelect, currentUser, song
 )
 
 export default connect(
-    (state) =>({
-        currentUser:selectors.getSelectedUser(state)
+    state =>({
+        currentUser: selectors.getSelectedUser(state)
     }),
-    (dispatch,{songID}) => ({
+    (dispatch, { songID }) => ({
         select(){
             dispatch(songActions.selectSong(songID))
         },

@@ -9,19 +9,18 @@ import Paper from '@material-ui/core/Paper';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 
-
 import Post from '../Post';
 import Song from '../Song'
 import './styles.css';
 import * as selectors from '../../reducers';
-import * as songActions from '../../actions/songs'
-import {logOut} from "../../actions/auth";
+import * as songActions from '../../actions/songs';
+
 
 const apiCall = (type, searchTerm) =>{
     const getIDWithInfo = `https://api.deezer.com/${type}/${searchTerm}`;
     const corsURLID = `https://cors-anywhere.herokuapp.com/${getIDWithInfo}`;
     const axios = require('axios').default;
-    return axios.get(getIDWithInfo)
+    return axios.get(corsURLID)
 }
 
 

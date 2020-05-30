@@ -3,8 +3,8 @@ import ReactDOM from 'react-dom';
 
 import configureStore from './configureStore';
 import Root from './components/Root';
-import * as postActions from './actions/posts';
-import * as userActions from './actions/users';
+// import * as postActions from './actions/posts';
+// import * as userActions from './actions/users';
 // import * as selectors from './reducers';
 // import * as songsActions from './actions/songs';
 // import * as playlistActions from './actions/playlists'
@@ -38,17 +38,16 @@ const store = configureStore();
 //     store.dispatch(playlistActions.addPlaylist(response.data.id, response.data.title, response.data.description, response.data.picture_big, response.data.tracks))
 // });
 
-/*store.dispatch(userActions.createUser("José", "López", "josesito12", "joselop@gmail.com", "password123"))
-store.dispatch(userActions.createUser("Uncle", "Sam", "pepetrueno123", "pp@gmail.com", "ppassword123"))
-store.dispatch(userActions.createUser("Doug", "Las", "doug456", "doug@gmail.com", "chilerisimo"))
-store.dispatch(userActions.createUser('Turn', "Table", "TTFire", "fire@gmail.com", "tttfirettt"))
-store.dispatch(userActions.createUser('Kendrick', "Duckworth", "kdotking", "duckworth@gmail.com", "humblegtall"))
+// store.dispatch(userActions.createUser("José", "López", "josesito12", "joselop@gmail.com", "password123"))
+// store.dispatch(userActions.createUser("Uncle", "Sam", "pepetrueno123", "pp@gmail.com", "ppassword123"))
+// store.dispatch(userActions.createUser('Turn', "Table", "TTFire", "fire@gmail.com", "tttfirettt"))
+// store.dispatch(userActions.createUser('Kendrick', "Duckworth", "kdotking", "duckworth@gmail.com", "humblegtall"))
 
-store.dispatch(postActions.publishPost("José López", "josesito12", 15, "Acabo de descubrir esta canción y me encantó!", '', 476676002))
-store.dispatch(postActions.publishPost("Christian Molina", "chrismolina", 38, "Mi canción favorita para despertar.", '', 476676002))
-store.dispatch(postActions.publishPost("María Ximena", "xime222", 10, "La mejor canción del nuevo álbum de Bad Bunny. La mejor canción del nuevo álbum de Bad Bunny. La mejor canción del nuevo álbum de Bad Bunny. La mejor canción del nuevo álbum de Bad Bunny.", '', 476676002))
-store.dispatch(postActions.publishPost("Juan Donis", "juandonissss", 22, "Colores!", '', 476676002))
-store.dispatch(postActions.publishPost("Pedro Martínez", "martinezpedro", 7, "Dark Lane Demo Tapes es puro fuego!", '', 476676002))*/
+/* store.dispatch(postActions.publishPost("José López", "josesito12", 15, "Acabo de descubrir esta canción y me encantó!", '', 476676002))
+store.dispatch(postActions.publishPost("Uncle Sam", "pepetrueno123", 38, "Mi canción favorita para despertar.", '', 476676002))
+store.dispatch(postActions.publishPost("Doug Las", "doug456", 10, "La mejor canción del nuevo álbum de Bad Bunny. La mejor canción del nuevo álbum de Bad Bunny. La mejor canción del nuevo álbum de Bad Bunny. La mejor canción del nuevo álbum de Bad Bunny.", '', 476676002))
+store.dispatch(postActions.publishPost("Turn table", "juandonissss", 22, "Colores!", '', 476676002))
+store.dispatch(postActions.publishPost("Kendrick Duckworth", "martinezpedro", 7, "Dark Lane Demo Tapes es puro fuego!", '', 476676002)) */
 
 /*store.dispatch(postActions.publishPost('Uncle Sam', 'pepetrueno123', 0, 'plz work'))*/
 

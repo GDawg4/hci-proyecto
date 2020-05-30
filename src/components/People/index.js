@@ -3,9 +3,8 @@ import { Link } from 'react-router-dom';
 import { connect } from "react-redux";
 
 import './styles.css';
-import Result from "../Result";
 import * as userActions from "../../actions/users";
-import * as navActions from '../../actions/navigation'
+import * as navActions from '../../actions/navigation';
 
 import default_image from "../../resources/default.svg";
 

@@ -13,7 +13,7 @@ export const findSong = (songID, title, artist, duration, cover, album) => ({
 })
 
 export const clearSong = () =>({
-    type:types.SONG_CLEARED,
+    type: types.SONG_CLEARED,
 })
 
 export const selectSong = (songID) =>({

@@ -41,9 +41,6 @@ const currentlySelected = (state = null, action) =>{
         case types.SONG_SELECTED:{
             return action.payload.selected
         }
-        case types.SONG_CLEARED:{
-            return null
-        }
         default:{
             return state
         }

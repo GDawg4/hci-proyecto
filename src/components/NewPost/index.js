@@ -1,12 +1,10 @@
-import default_image from "../../resources/default.svg";
 import React from "react";
-import * as postActions from '../../actions/posts'
-import {connect} from 'react-redux'
-import { Field, reduxForm, reset } from 'redux-form'
-import isNil from 'lodash/isNil'
+import { Field, reduxForm, reset } from 'redux-form';
+import isNil from 'lodash/isNil';
 
 import './styles.css';
-import * as selectors from '../../reducers'
+import default_image from "../../resources/default.svg";
+import * as postActions from '../../actions/posts';
 
 const NewPost = ({ handleSubmit }) => {
     return (

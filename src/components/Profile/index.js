@@ -8,7 +8,7 @@ import * as selectors from "../../reducers";
 import ProfileHeader from "../ProfileHeader";
 
 const height = content => {
-    const result = Math.ceil(content.length/64) * 27 + 148;
+    const result = Math.ceil(content.length/50) * 27 + 148;
     return result;
 }
 
@@ -20,9 +20,12 @@ const Profile = ({ name, posts, self_name, section }) => {
         <div className='profile-wrapper'>
             <div className='posts-person'>
                 <ProfileHeader />
-                {posts.length > 0 ? reverse(posts).filter(post => post.username === user).map(post =>
-                    <Post key={post.id} source={post.source} index={post.id} height={height(post.content)} {...post}/>
-                ) : <div className="default-message">Este usuario no ha publicado</div>}
+                {posts.filter(post => post.username === user).length === 0 ? <div className="no-posts-message">Este usuario no ha publicado</div> 
+                    : 
+                    reverse(posts).filter(post => post.username === user).map(post =>
+                        <Post key={post.id} source={post.source} index={post.id} height={height(post.content)} {...post}/>
+                    )
+                }
             </div>
         </div>
     )

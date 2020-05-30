@@ -2,7 +2,7 @@ import React from 'react';
 import { Provider, connect } from 'react-redux';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
-import { Login, Registro, Feed, Top, Biblioteca, Chat } from '../../components';
+import { Login, Registro, Feed, Top, Biblioteca } from '../../components';
 import App from '../../app/index';
 import MusicPlayer from '../MusicPlayer';
 import NavBar from '../NavBar';
